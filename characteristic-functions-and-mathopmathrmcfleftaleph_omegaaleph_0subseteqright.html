@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Characteristic Functions and \mathop{\mathrm{cf}}\left([\aleph_\omega]^{\aleph_0},\subseteq\right)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext article ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-article.html"><span class="title">blah</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="the-basic-pcf-toolkit.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-article.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="things-we-already-know.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\foo}{b^{ar}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="the-basic-pcf-toolkit.html" class="internal"><span class="codenumber">1</span> <span class="title">The basic pcf toolkit</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#what-is-mathopmathrmpcfa-again" class="internal"><span class="codenumber">1.1</span> <span class="title">What is <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\)</span> again?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#what-about-those-ideals-and-generator-things" class="internal"><span class="codenumber">1.2</span> <span class="title">What about those ideals and generator things?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#compactness-for-generators" class="internal"><span class="codenumber">1.3</span> <span class="title">Compactness for Generators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#the-ideals-j_lambdaa" class="internal"><span class="codenumber">1.4</span> <span class="title">The ideals <span class="process-math">\(J_{&lt;\lambda}[A]\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#cofinality-sequences" class="internal"><span class="codenumber">1.5</span> <span class="title">Cofinality sequences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#what-do-we-mean-by-pcf-structure" class="internal"><span class="codenumber">1.6</span> <span class="title">What do we mean by “pcf structure”?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#application-the-cofinality-of-prod-a" class="internal"><span class="codenumber">1.7</span> <span class="title">Application: the cofinality of <span class="process-math">\(\prod A\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html" class="internal"><span class="codenumber">2</span> <span class="title">Characteristic Functions and <span class="process-math">\(\mathop{\mathrm{cf}}\left([\aleph_\omega]^{\aleph_0},\subseteq\right)\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#internally-approachable-models" class="internal"><span class="codenumber">2.1</span> <span class="title">Internally Approachable Models</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#characteristic-functions-of-models" class="internal"><span class="codenumber">2.2</span> <span class="title">Characteristic functions of models</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#building-generators-from-cofinality-sequences" class="internal"><span class="codenumber">2.3</span> <span class="title">Building generators from cofinality sequences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#minimal-club-continuity" class="internal"><span class="codenumber">2.4</span> <span class="title">Minimal club continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#internal-reflections" class="internal"><span class="codenumber">2.5</span> <span class="title">Internal reflections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#characterizing-characteristic-functions" class="internal"><span class="codenumber">2.6</span> <span class="title">Characterizing characteristic functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#the-cofinality-of-aleph_omegaaleph_0subseteq" class="internal"><span class="codenumber">2.7</span> <span class="title">The cofinality of <span class="process-math">\(([\aleph_\omega]^{\aleph_0},\subseteq)\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="things-we-already-know.html" class="internal"><span class="codenumber">3</span> <span class="title">Things we already know(?)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="things-we-already-know.html#no-holes-theorem" class="internal"><span class="codenumber">3.1</span> <span class="title">No Holes Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="things-we-already-know.html#scales-at-cardinals-of-uncountable-cofinality" class="internal"><span class="codenumber">3.2</span> <span class="title">Scales at cardinals of uncountable cofinality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="transitive-generators-and-localization.html" class="internal"><span class="codenumber">4</span> <span class="title">Transitive Generators and Localization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="transitive-generators-and-localization.html#what-are-transitive-generators" class="internal"><span class="codenumber">4.1</span> <span class="title">What are transitive generators?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="transitive-generators-and-localization.html#a-naive-attempt" class="internal"><span class="codenumber">4.2</span> <span class="title">A naive attempt</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="transitive-generators-and-localization.html#existence-of-transitive-generators" class="internal"><span class="codenumber">4.3</span> <span class="title">Existence of Transitive Generators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="transitive-generators-and-localization.html#the-localization-theorem" class="internal"><span class="codenumber">4.4</span> <span class="title">The Localization Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="no-large-intervals.html" class="internal"><span class="codenumber">5</span> <span class="title">No large intervals</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2</span><span class="space"> </span><span class="title">Characteristic Functions and <span class="process-math">\(\mathop{\mathrm{cf}}\left([\aleph_\omega]^{\aleph_0},\subseteq\right)\)</span></span>
+</h2>
+<div class="para logical" id="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright-2">
+<div class="para">Where are we headed now? Our next stop is Shelah’s theorem that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\max\mathop{\mathrm{pcf}}\left(\{\aleph_n:n&lt;\omega\}\right) = \mathop{\mathrm{cf}}\left([\aleph_\omega]^{\aleph_0},\subseteq\right),
+\end{equation*}
+</div>
+<div class="para">a theorem that gets at the heart of the connection between traditional cardinal arithmetic and pcf theory.</div>
+</div>
+<div class="para logical" id="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright-3">
+<div class="para">In this section, we modify our usual assumptions about <span class="process-math">\(A\)</span> and its associated pcf structure by demanding</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|A|^+&lt;\min(A)
+\end{equation*}
+</div>
+<div class="para">(this is innocuous as far as pcf theory is concerned), and we assume <span class="process-math">\(\kappa\)</span> is a regular cardinal such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|A|&lt;\kappa=\mathop{\mathrm{cf}}\kappa&lt;\min(A).
+\end{equation*}
+</div>
+<div class="para">Our assumption on <span class="process-math">\(|A|\)</span> is so that such a <span class="process-math">\(\kappa\)</span> exists.</div>
+</div>
+<div class="para" id="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright-4">For the remainder this section, we will let <span class="process-math">\(J_{&lt;\lambda}[A]\text{,}\)</span> <span class="process-math">\(B_\lambda[A]\)</span> and <span class="process-math">\(\langle f^\lambda_\alpha:\alpha&lt;\lambda\rangle\)</span> be as in the preceding section, for each <span class="process-math">\(\lambda\in\mathop{\mathrm{pcf}}(A)\text{.}\)</span>
+</div>
+<section class="subsection" id="internally-approachable-models"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Internally Approachable Models</span>
+</h3>
+<div class="para" id="internally-approachable-models-2">Our main tool in this section and the next is internally approachable models, which we have seen already in class during our investigation of <span class="process-math">\(I[\lambda]\text{.}\)</span> Recall:</div>
+<div class="para" id="internally-approachable-models-3">
+<dfn class="terminology">Definition 6</dfn>.  We say that <span class="process-math">\(N\)</span> (an elementary submodel of some expansion of <span class="process-math">\(\langle H(\chi),\in, &lt;_\chi\rangle\)</span> for some sufficiently large regular cardinal <span class="process-math">\(\chi\)</span>) is <span class="process-math">\(\kappa\)</span>-internally approachable if <span class="process-math">\(N\)</span> is the union of a sequence <span class="process-math">\(\langle N_i:i&lt;\kappa\rangle\)</span>
+</div>
+<div class="para logical" id="internally-approachable-models-4"><ul class="disc">
+<li id="internally-approachable-models-4-1-1"><div class="para" id="internally-approachable-models-4-1-1-1">
+<span class="process-math">\(\langle N_i:i&lt;\kappa\rangle\)</span> is a continuous <span class="process-math">\(\in\)</span>-sequence of elementary submodels of <span class="process-math">\(H(\chi)\)</span>
+</div></li>
+<li id="internally-approachable-models-4-1-2"><div class="para" id="internally-approachable-models-4-1-2-1"><span class="process-math">\(\displaystyle \langle N_j:j\leq i\rangle\in N_{i+1}\)</span></div></li>
+<li id="internally-approachable-models-4-1-3"><div class="para" id="internally-approachable-models-4-1-3-1">
+<span class="process-math">\(|N_i|&lt;\kappa\)</span> and <span class="process-math">\(N_i\cap\kappa\)</span> is an initial segment of <span class="process-math">\(\kappa\text{.}\)</span>
+</div></li>
+</ul></div>
+<div class="para" id="internally-approachable-models-5">We are going to want to assume that <span class="process-math">\(A\)</span> (together with its associated pcf structure) is an element of <span class="process-math">\(N_0\text{.}\)</span>
+</div></section><section class="subsection" id="characteristic-functions-of-models"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2</span><span class="space"> </span><span class="title">Characteristic functions of models</span>
+</h3>
+<div class="para logical" id="characteristic-functions-of-models-2">
+<div class="para">One of the reasons behind the usefulness of requiring <span class="process-math">\(|A|&lt;\kappa&lt;\min(A)\)</span> is the observation that <span class="process-math">\(A\)</span> is not only an element of <span class="process-math">\(N_0\text{,}\)</span> but it is a subset of <span class="process-math">\(N_0\)</span> as well because we assume <span class="process-math">\(N_0\cap\kappa\)</span> is an initial segment of <span class="process-math">\(\kappa\text{.}\)</span> Furthermore, for any <span class="process-math">\(a\in A\)</span> we know</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sup(N\cap a)&lt;a,
+\end{equation*}
+</div>
+<div class="para">and so <span class="process-math">\(N\)</span> can be used to define a natural function in <span class="process-math">\(\prod A\text{,}\)</span> the <em class="emphasis">characteristic function of <span class="process-math">\(N\)</span></em>:</div>
+</div>
+<div class="para logical" id="characteristic-functions-of-models-3">
+<div class="para">
+<dfn class="terminology">Definition 7</dfn>.  The characteristic function <span class="process-math">\(\chi_N\)</span> of <span class="process-math">\(N\)</span> in <span class="process-math">\(\prod A\)</span> is defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\chi_N(a) = \sup(N\cap a)
+\end{equation*}
+</div>
+</div>
+<div class="para" id="characteristic-functions-of-models-4">We will also need to consider the characteristic functions of models <span class="process-math">\(N_i\)</span> for <span class="process-math">\(i&lt;\kappa\text{.}\)</span> These functions are defined in the obvious way, and note that for each <span class="process-math">\(i&lt;\kappa\text{,}\)</span> the sequence <span class="process-math">\(\langle \chi_{N_j}:j\leq i\rangle\)</span> is in the model <span class="process-math">\(N_{i+1}\)</span> because the characteristic functions are definable from their associated model.</div>
+<div class="para" id="characteristic-functions-of-models-5">The sequence <span class="process-math">\(\langle \chi_{N_i}:i&lt;\kappa\rangle\)</span> is increasing and continuous, with supremum <span class="process-math">\(\chi_N\text{.}\)</span> Much of the work of this section will be to generalize Theorem <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "thm2" missing or not unique]</code> and show that there is a set <span class="process-math">\(F\subseteq\prod A\)</span> of cardinality <span class="process-math">\(\max\mathop{\mathrm{pcf}}(A)\)</span> such that <span class="process-math">\(\chi_N\in F\)</span> for any <span class="process-math">\(\kappa\)</span>-internally approachable <span class="process-math">\(N\)</span> containing <span class="process-math">\(A\text{.}\)</span> Even though these models might be quite arbitrary, there are relatively few possibilities for their characteristic functions.</div></section><section class="subsection" id="building-generators-from-cofinality-sequences"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3</span><span class="space"> </span><span class="title">Building generators from cofinality sequences</span>
+</h3>
+<div class="para logical" id="building-generators-from-cofinality-sequences-2">
+<div class="para">
+<dfn class="terminology">Proposition 8</dfn>.  Suppose <span class="process-math">\(\lambda\in\mathop{\mathrm{pcf}}(A)\cap N\text{,}\)</span> and let <span class="process-math">\(\delta=\sup(N\cap\lambda)\text{.}\)</span> If <span class="process-math">\(f\in\prod A\)</span> is an upper bound for <span class="process-math">\(\langle f^\lambda_\alpha:\alpha&lt;\delta\rangle\)</span> mod <span class="process-math">\(J_{&lt;\lambda}[A]\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B_\lambda\subseteq_{J_{&lt;\lambda}[A]}\{a\in A: \chi_N(a)\leq f(a)\}.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="building-generators-from-cofinality-sequences-3">
+<div class="para">
+<em class="emphasis">Proof.</em> If this fails, then</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\{a\in B_\lambda: f(a)&lt;\sup(N\cap a)\}\notin J_{&lt;\lambda}[A].
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(|A|\)</span> is less than <span class="process-math">\(\kappa\text{,}\)</span> we can find a single <span class="process-math">\(i&lt;\kappa\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+f(a)&lt;\sup(N\cap a)\Longleftrightarrow f(a)&lt;\sup(N_i\cap a),
+\end{equation*}
+</div>
+<div class="para">and so</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\label{eqn65.2}
+\{a\in B_\lambda: f(a)&lt;\chi_{N_i}(a)\}\notin J_{&lt;\lambda}[A].
+\end{equation*}
+</div>
+<div class="para">But the model <span class="process-math">\(N\)</span> can see an <span class="process-math">\(\alpha&lt;\lambda\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\label{eqn65.3}
+\chi_{N_i}\restriction B_\lambda &lt;_{J_{&lt;\lambda}[A]} f^\lambda_\alpha\restriction B_\lambda.
+\end{equation*}
+</div>
+<div class="para">In particular, there is such an <span class="process-math">\(\alpha\in N\cap\lambda\text{,}\)</span> and putting (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn65.2" missing or not unique]</code>) and (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn65.3" missing or not unique]</code>) together tells us</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\{a\in B_\lambda: f(a)&lt; f^\lambda_\alpha(a)\}\notin J_{&lt;\lambda}[A].
+\end{equation*}
+</div>
+<div class="para">But this contradicts our assumption that <span class="process-math">\(f\)</span> bounds <span class="process-math">\(\bar{f}^\lambda\restriction\delta\)</span> mod <span class="process-math">\(J_{&lt;\lambda}[A]\text{.}\)</span> ◻</div>
+</div>
+<div class="para" id="building-generators-from-cofinality-sequences-4">This tells us that characteristic function <span class="process-math">\(\chi_N\)</span> is a least upper bound for <span class="process-math">\(\langle f^\lambda_\alpha:\alpha&lt;\sup(N\cap\lambda)\rangle\)</span> modulo the ideal <span class="process-math">\(J_{&lt;\lambda}[A]\restriction B_\lambda\text{.}\)</span> But more is true – it is actually an exact upper bound.</div>
+<div class="para" id="building-generators-from-cofinality-sequences-5">
+<dfn class="terminology">Corollary 9</dfn>.  Suppose <span class="process-math">\(\lambda\in N\cap\mathop{\mathrm{pcf}}(A)\)</span> and <span class="process-math">\(\delta = \sup(N\cap\lambda)\text{.}\)</span> Then <span class="process-math">\(\chi_N\)</span> is an exact upper bound for <span class="process-math">\(\langle f^\lambda_\alpha:\alpha&lt;\delta\rangle\)</span> modulo the ideal <span class="process-math">\(J_{&lt;\lambda}[A]\restriction B_\lambda\text{,}\)</span> and <span class="process-math">\(\delta\)</span> is a flat point for the sequence <span class="process-math">\(\bar{f}^\lambda\)</span> modulo the ideal <span class="process-math">\(J_{&lt;\lambda}[A]\restriction B_\lambda\text{.}\)</span>
+</div>
+<div class="para logical" id="building-generators-from-cofinality-sequences-6">
+<div class="para">
+<em class="emphasis">Proof.</em> If <span class="process-math">\(g\)</span> is below <span class="process-math">\(\chi_N\)</span> modulo <span class="process-math">\(J_{&lt;\lambda}[A]\restriction B_\lambda\text{,}\)</span> then since <span class="process-math">\(|A|&lt;\kappa\)</span> there is a single <span class="process-math">\(i&lt;\kappa\)</span> such that <span class="process-math">\(\chi_{N_i}\)</span> bounds <span class="process-math">\(g\)</span> mod <span class="process-math">\(J_{&lt;\lambda}[A]\restriction B_\lambda\text{.}\)</span> But just as in the previous proof, <span class="process-math">\(N\)</span> can see an ordinal <span class="process-math">\(\alpha&lt;\lambda\)</span> with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\chi_{N_i}\restriction B_\lambda&lt;_{J_{&lt;\lambda}[A]} f^\lambda_\alpha\restriction B_\lambda,
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\exists \alpha&lt;\delta)\left[ g &lt; f^\lambda_\alpha\mod J_{&lt;\lambda}[A]\restriction B_\lambda\right].
+\end{equation*}
+</div>
+<div class="para">To see that <span class="process-math">\(\delta\)</span> is a flat point, we just note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathop{\mathrm{cf}}(\sup(N\cap a)) = \kappa
+\end{equation*}
+</div>
+<div class="para">for each <span class="process-math">\(a\in A\text{,}\)</span> witnessed by the strictly increasing sequence <span class="process-math">\(\langle \chi_{N_i}(a):i&lt;\kappa\rangle\text{.}\)</span> ◻</div>
+</div>
+<div class="para" id="building-generators-from-cofinality-sequences-7">We close this subsection with some more corollaries of Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "prop:CharGenProp" missing or not unique]</code>.</div>
+<div class="para logical" id="building-generators-from-cofinality-sequences-8">
+<div class="para">
+<dfn class="terminology">Corollary 10</dfn>.  Suppose <span class="process-math">\(\lambda\in N\cap\mathop{\mathrm{pcf}}(A)\text{.}\)</span> If <span class="process-math">\(\lambda&lt;\max\mathop{\mathrm{pcf}}(A)\)</span> and there is a <span class="process-math">\(g\in N\cap\prod A\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f\leq_{J_{\leq\lambda}[A]}g,
+\end{equation*}
+</div>
+<div class="para">then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{a\in A: \chi_N(a)\leq f(a)\}\text{ is a generator for }\lambda.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="building-generators-from-cofinality-sequences-9">
+<div class="para">
+<em class="emphasis">Proof.</em> Because of Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "prop:CharGenProp" missing or not unique]</code>, we need only show that the set in question is in <span class="process-math">\(J_{\leq\lambda}[A]\text{.}\)</span> Notice that <span class="process-math">\(g(a)&lt;\chi_N(a)\)</span> for all <span class="process-math">\(a\in A\text{,}\)</span> so</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{a\in A: \chi_N(a)\leq f(a)\}\subseteq\{a\in A: g(a)&lt;f(a)\},
+\end{equation*}
+</div>
+<div class="para">and this latter set is in <span class="process-math">\(J_{\leq\lambda}[A]\)</span> by assumption. ◻</div>
+</div>
+<div class="para" id="building-generators-from-cofinality-sequences-10">Finally, we have the following:</div>
+<div class="para logical" id="building-generators-from-cofinality-sequences-11">
+<div class="para">
+<dfn class="terminology">Corollary 11</dfn>.  If <span class="process-math">\(\lambda\in N\cap\mathop{\mathrm{pcf}}(A)\)</span> and <span class="process-math">\(\sup(N\cap\lambda)\leq\gamma&lt;\lambda\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{a\in A: \chi_N(a)\leq f^\lambda_\gamma(a)\}\text{ is a generator for }\lambda.
+\end{equation*}
+</div>
+</div>
+<div class="para" id="building-generators-from-cofinality-sequences-12">
+<em class="emphasis">Proof.</em> If <span class="process-math">\(\lambda = \max\mathop{\mathrm{pcf}}(A)\text{,}\)</span> then this follows immediate from Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "prop:CharGenProp" missing or not unique]</code>. If <span class="process-math">\(\lambda&lt;\max\mathop{\mathrm{pcf}}(A)\)</span> then <span class="process-math">\(\bar{f}^\lambda\)</span> has an upper bound <span class="process-math">\(g\)</span> modulo <span class="process-math">\(J_{\leq\lambda}[A]\)</span> because <span class="process-math">\(\prod A/ J_{\leq\lambda}[A]\)</span> is <span class="process-math">\(\lambda^+\)</span>-directed. Now the previous corollary applies and we have the result. ◻</div></section><section class="subsection" id="minimal-club-continuity"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4</span><span class="space"> </span><span class="title">Minimal club continuity</span>
+</h3>
+<div class="para logical" id="minimal-club-continuity-2">
+<div class="para">
+<dfn class="terminology">Definition 12</dfn>.  Let <span class="process-math">\(\bar{f}=\langle f^\lambda_\alpha:\alpha&lt;\lambda\rangle\)</span> be a cofinality sequence for <span class="process-math">\(\lambda\)</span> in <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\text{,}\)</span> and let <span class="process-math">\(\delta&lt;\lambda\)</span> be a limit ordinal of uncountable cofinality. We say that the sequence <span class="process-math">\(\bar{f}\)</span> is <em class="emphasis">minimally club continuous at <span class="process-math">\(\delta\)</span></em> if for each <span class="process-math">\(a\in A\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\label{eqn:65.1}
+f^\lambda_\delta(a) = \min\{\sup\{f^\lambda_\alpha(a): \alpha\in C\}: C\text{ closed unbounded in }\delta\}.
+\end{equation*}
+</div>
+<div class="para">We say that <span class="process-math">\(\bar{f}\)</span> is <em class="emphasis">minimally club continuous at cofinality <span class="process-math">\(\kappa\)</span></em> if the above holds for all <span class="process-math">\(\delta&lt;\lambda\)</span> of cofinality <span class="process-math">\(\kappa\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="minimal-club-continuity-3">
+<div class="para">Let us check that this definition is reasonable. Given <span class="process-math">\(\delta&lt;\lambda\)</span> of cofinality <span class="process-math">\(\kappa\)</span> and <span class="process-math">\(a\in A\text{,}\)</span> the right-hand side of (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn:65.1" missing or not unique]</code>) makes sense and so this equation defines a function in <span class="process-math">\(\prod A\text{.}\)</span> If we let <span class="process-math">\(C(a)\)</span> be a closed unbounded subset of <span class="process-math">\(\delta\)</span> for which the minimizing value is obtained, then for any closed unbounded <span class="process-math">\(C\subseteq C(a)\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+f^\lambda_\delta(a) = \sup\{f^\lambda_\alpha(a):\alpha\in C\}.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(|A|&lt;\kappa\text{,}\)</span> we can let <span class="process-math">\(C\)</span> be the intersection of the sets <span class="process-math">\(C(a)\)</span> for <span class="process-math">\(a\in A\text{,}\)</span> and this gives us a single closed unbounded <span class="process-math">\(C\subseteq\delta\)</span> with the property that for <em class="emphasis">any</em> closed unbounded <span class="process-math">\(D\subseteq C\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+(\forall a\in A)\left[f^\lambda_\delta(a) = \sup\{f^\lambda_\alpha(a):\alpha\in D\}\right].
+\end{equation*}
+</div>
+<div class="para">In particular, for each <span class="process-math">\(\alpha\in C\)</span> we will have <span class="process-math">\(f_\alpha^\lambda\leq f^\lambda_\delta\text{,}\)</span> and so by (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn:65.1" missing or not unique]</code>) we know that for any closed unbounded subset <span class="process-math">\(D\)</span> of <span class="process-math">\(C\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+f^\lambda_\delta = \sup\{f^\lambda_\alpha:\alpha\in D\}.
+\end{equation*}
+</div>
+<div class="para">In particulary, <span class="process-math">\(f^\lambda_\delta\)</span> is an upper bound for <span class="process-math">\(\bar{f}^\lambda\restriction\delta\)</span> modulo <span class="process-math">\(J_{&lt;\lambda}[A]\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="minimal-club-continuity-4">Returning to our usual context, suppose that <span class="process-math">\(\bar{f}^\lambda\)</span> is minimally club continuous at cofinality <span class="process-math">\(\kappa\text{,}\)</span> and let <span class="process-math">\(N\)</span> be a <span class="process-math">\(\kappa\)</span>-internally approachable model containing <span class="process-math">\(\bar{f}_\lambda\text{.}\)</span> What occurs at <span class="process-math">\(\delta = \sup(N\cap\lambda)\text{?}\)</span>
+</div>
+<div class="para logical" id="minimal-club-continuity-5">
+<div class="para">The function <span class="process-math">\(f^\lambda_\delta\)</span> will not be in <span class="process-math">\(N\text{,}\)</span> and neither is the minimizing club <span class="process-math">\(C\subseteq\delta\text{.}\)</span> We do know, however, that <span class="process-math">\(C\)</span> is a subset of <span class="process-math">\(N\)</span> and this means that <span class="process-math">\(f^\lambda_\alpha\)</span> is an element of <span class="process-math">\(N\)</span> for every <span class="process-math">\(\alpha\in C\text{.}\)</span> But then the range of <span class="process-math">\(f^\lambda_\alpha\)</span> will be a subset of <span class="process-math">\(N\)</span> (as <span class="process-math">\(A\subseteq N\)</span>), so for each <span class="process-math">\(a\in A\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f^\lambda_\delta(a) = \sup\{f^\lambda_\alpha(a):a\in C\}\leq\sup(N\cap a) = \chi_N(a),
+\end{equation*}
+</div>
+<div class="para">and so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\label{eqn:65.8}
+f^\lambda_{\sup(N\cap\lambda)}\leq \chi_N.
+\end{equation*}
+</div>
+<div class="para">But we have already shown that <span class="process-math">\(\chi_N\restriction B_\lambda\)</span> is an exact upper bound for <span class="process-math">\(\langle f_\alpha^\lambda\restriction B_\lambda:\alpha&lt;\delta\rangle\)</span> modulo <span class="process-math">\(J_{&lt;\lambda}[A]\text{,}\)</span> so it must be the case that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\chi_N\restriction B_\lambda =_{J_{&lt;\lambda}[A]} f^\lambda_\delta\restriction B_\lambda.
+\end{equation*}
+</div>
+<div class="para">In the special case where <span class="process-math">\(\lambda\)</span> is <span class="process-math">\(\max\mathop{\mathrm{pcf}}(A)\text{,}\)</span> we can assume <span class="process-math">\(B_\lambda = A\text{,}\)</span> and we then have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\chi_N =_{J_{&lt;\lambda}[A]}f^\lambda_{\sup(N\cap\lambda)}.
+\end{equation*}
+</div>
+<div class="para">So reflecting back on our goal of trying to capture the characteristic functions of <span class="process-math">\(\kappa\)</span>-internally approachable models, we have shown that if <span class="process-math">\(\lambda = \max\mathop{\mathrm{pcf}}(A)\)</span> and <span class="process-math">\(\bar{f}^\lambda\)</span> is minimally club continuous at cofinality <span class="process-math">\(\kappa\text{,}\)</span> then <span class="process-math">\(\chi_N\)</span> will agree with <span class="process-math">\(f^\lambda_{\sup(N\cap\lambda)}\)</span> except perhaps on a set in <span class="process-math">\(J_{&lt;\lambda}[A]\text{.}\)</span> Our next move is to show that this set of exceptions, even though potentially not in <span class="process-math">\(N\text{,}\)</span> can still be covered by a set in <span class="process-math">\(N\cap J_{&lt;\lambda}[A]\text{.}\)</span>
+</div>
+</div></section><section class="subsection" id="internal-reflections"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5</span><span class="space"> </span><span class="title">Internal reflections</span>
+</h3>
+<div class="para logical" id="internal-reflections-2">
+<div class="para">Taking stock of our story so far, we let <span class="process-math">\(\bar{f}^\lambda\)</span> and <span class="process-math">\(N\)</span> be as usual, and define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B^*_\lambda:=\{a\in A:  \sup(N\cap a)\leq f^\lambda_{\sup(N\cap\lambda)}(a)\}.
+\end{equation*}
+</div>
+<div class="para">We know <span class="process-math">\(B^*_\lambda\)</span> is a generator for <span class="process-math">\(\lambda\text{,}\)</span> but since it is defined using objects that are external to <span class="process-math">\(N\text{,}\)</span> we have no reason to believe that it will be in the model. In this subsection we will show that <span class="process-math">\(B^*_\lambda\)</span> can be “reflected” inside the model <span class="process-math">\(N\text{,}\)</span> and the existence of such reflections will be used as fuel for arguments by induction on <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="internal-reflections-3">
+<div class="para">Given <span class="process-math">\(i&lt;j&lt;\kappa\text{,}\)</span> let us define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B^{i,j}_\lambda:=\{a\in A\cap(\lambda+1): \sup(N_i\cap a)&lt; f^\lambda_{\sup(N_j\cap\lambda)}(a)\}
+\end{equation*}
+</div>
+<div class="para">The set <span class="process-math">\(B^{i,j}_\lambda\)</span> can be defined in the model <span class="process-math">\(N_{j+1}\text{,}\)</span> so each <span class="process-math">\(B^{i,j}_\lambda\)</span> is in <span class="process-math">\(N\text{.}\)</span> We will show that for many choices of <span class="process-math">\(i\)</span> and <span class="process-math">\(j\text{,}\)</span> this set will also be a generator for <span class="process-math">\(\lambda\)</span> that is a subset of <span class="process-math">\(B^*_\lambda\text{,}\)</span> and this is how we produce our reflections of <span class="process-math">\(B^*_\lambda\)</span> into <span class="process-math">\(N\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="internal-reflections-4">
+<dfn class="terminology">Theorem 3</dfn>.  <em class="emphasis">Under our usual assumptions, suppose <span class="process-math">\(\lambda\)</span> is in <span class="process-math">\(N\cap\mathop{\mathrm{pcf}}(A)\text{,}\)</span> while <span class="process-math">\(\bar{f}^\lambda\in N\)</span> is minimally club continuous at cofinality <span class="process-math">\(\kappa\text{.}\)</span> Then there is a closed unbounded <span class="process-math">\(E_\lambda\subseteq\kappa\)</span> such that for each <span class="process-math">\(i&lt;j\)</span> in <span class="process-math">\(E_\lambda\)</span> the set<div class="displaymath process-math">
+\begin{equation*}
+B^{i,j}_\lambda:=\{a\in A: \sup(N_i\cap a)&lt; f^\lambda_{\sup(N_j\cap\lambda)}(a)\}
+\end{equation*}
+</div>is a generator for <span class="process-math">\(\lambda\text{,}\)</span> and<div class="displaymath process-math">
+\begin{equation*}
+B^{i,j}_\lambda\subseteq\{a\in A: \sup(N\cap a)\leq f^\lambda_{\sup(N\cap\lambda)}(a)\}.
+\end{equation*}
+</div></em>
+</div>
+<div class="para" id="internal-reflections-5">
+<em class="emphasis">Proof.</em> Before getting in to the proof, let us recall that <span class="process-math">\(B_\lambda\)</span> is our “ambient” generator for <span class="process-math">\(\lambda\)</span> that is an element of <span class="process-math">\(N\text{,}\)</span> in contrast to <span class="process-math">\(B^*_\lambda\text{,}\)</span> which is the generator we built by comparing <span class="process-math">\(f^\lambda_{\sup(N\cap\lambda)}\)</span> with <span class="process-math">\(\chi_N\text{.}\)</span> Both of these will make an appearance in the argument.</div>
+<div class="para logical" id="internal-reflections-6">
+<div class="para">Let <span class="process-math">\(C\)</span> be a closed unbounded subset of <span class="process-math">\(\kappa\)</span> witnessing that <span class="process-math">\(\bar{f}^\lambda\)</span> is minimally club continuous at <span class="process-math">\(N\cap\lambda\text{,}\)</span> so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\label{eqn:65.6}
+(\forall a\in A)\left[f^\lambda_{\sup(N\cap\lambda)}(a) = \sup\{f^\lambda_\alpha(a):\alpha\in C\}\right],
+\end{equation*}
+</div>
+<div class="para">and this remains true for any closed unbounded subset of <span class="process-math">\(C\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="internal-reflections-7">
+<div class="para">Next, since <span class="process-math">\(|A|&lt;\kappa\text{,}\)</span> we know for all sufficiently large <span class="process-math">\(\alpha&lt;\kappa\)</span> that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\label{eqn:65.4}
+f^\lambda_{\sup(N\cap\lambda)}(a)&lt; \sup(N\cap a) \Longleftrightarrow f^\lambda_{\sup(N\cap\lambda)}(a)&lt;\sup(N_\alpha\cap a).
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="internal-reflections-8">
+<div class="para">Finally, given <span class="process-math">\(\beta&lt;\kappa\text{,}\)</span> there is an ordinal <span class="process-math">\(h(\beta)&lt;\kappa\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\label{eqn:65.5}
+h(\beta)\leq\gamma&lt;\kappa\Longrightarrow
+\chi_{N_\beta}\restriction B_\lambda&lt;_{J_{&lt;\lambda}[A]} f^\lambda_\gamma\restriction B_\lambda
+\end{equation*}
+</div>
+<div class="para">because <span class="process-math">\(\bar{f}^\lambda\)</span> is a cofinality sequence for <span class="process-math">\(\lambda\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="internal-reflections-9">We let <span class="process-math">\(E_\lambda\)</span> be the closed unbounded subset of <span class="process-math">\(\kappa\)</span> defined by putting <span class="process-math">\(\alpha\)</span> into <span class="process-math">\(E_\lambda\)</span> if</div>
+<div class="para logical" id="internal-reflections-10"><ul class="disc">
+<li id="internal-reflections-10-1-1"><div class="para" id="internal-reflections-10-1-1-1">
+<span class="process-math">\(\alpha\)</span> is large enough so that (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn:65.4" missing or not unique]</code>) holds,</div></li>
+<li id="internal-reflections-10-1-2"><div class="para" id="internal-reflections-10-1-2-1">
+<span class="process-math">\(\alpha\)</span> is closed under the function <span class="process-math">\(h\)</span> from (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn:65.5" missing or not unique]</code>), and</div></li>
+<li id="internal-reflections-10-1-3"><div class="para" id="internal-reflections-10-1-3-1">
+<span class="process-math">\(\sup(N_\alpha\cap\lambda)\in C\text{,}\)</span> the closed unbounded set from (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn:65.6" missing or not unique]</code>).</div></li>
+</ul></div>
+<div class="para" id="internal-reflections-11">Note that <span class="process-math">\(E_\lambda\)</span> is closed and unbounded in <span class="process-math">\(\kappa\)</span> because the set <span class="process-math">\(\{\sup(N_\alpha\cap\lambda):\alpha&lt;\kappa\}\)</span> is too, so we now show that <span class="process-math">\(E_\lambda\)</span> has the other required properties.</div>
+<div class="para logical" id="internal-reflections-12">
+<div class="para">Given <span class="process-math">\(i&lt;j&lt;\kappa\)</span> in <span class="process-math">\(E_\lambda\text{,}\)</span> suppose <span class="process-math">\(a\in B^{i,j}_\lambda\text{.}\)</span> By definition, this means</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\sup(N_i\cap a)&lt; f^\lambda_{\sup(N_j\cap\lambda)}(a).
+\end{equation*}
+</div>
+<div class="para">But <span class="process-math">\(\sup(N_j\cap\lambda)\)</span> is in <span class="process-math">\(C\text{,}\)</span> so by (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn:65.6" missing or not unique]</code>),</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+f^\lambda_{\sup(N_j\cap\lambda)}\leq f^\lambda_{\sup(N\cap\lambda)},
+\end{equation*}
+</div>
+<div class="para">and therefore</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\sup(N_i\cap a)&lt; f^\lambda_{\sup(N\cap\lambda)}.
+\end{equation*}
+</div>
+<div class="para">But now <span class="process-math">\(i\)</span> is large enough so that by (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn:65.4" missing or not unique]</code>), we are allowed to conclude</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+f^\lambda_{\sup(N\cap\lambda)}(a) = \chi_N(a)
+\end{equation*}
+</div>
+<div class="para">and hence <span class="process-math">\(a\in B^*_\lambda\text{.}\)</span> Thus, <span class="process-math">\(B^{i, j}_\lambda\subseteq B^*_\lambda\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="internal-reflections-13">
+<div class="para">To see that <span class="process-math">\(B^{i, j}_\lambda\)</span> is a generator, we will need to use the fact that <span class="process-math">\(h(i)&lt;j\)</span> and <span class="process-math">\(j\leq\sup(N_j\cap\lambda)\text{.}\)</span> This means</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\chi_{N_i}\restriction B_\lambda &lt;_{J_{&lt;\lambda}[A]} f^\lambda_{\sup(N_j\cap\lambda)}\restriction B_\lambda,
+\end{equation*}
+</div>
+<div class="para">and so for <span class="process-math">\(J_{&lt;\lambda}[A]\)</span>-almost every <span class="process-math">\(a\in B_\lambda\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sup(N_i\cap a)&lt; f^\lambda_{\sup(N_j\cap\lambda)}(a).
+\end{equation*}
+</div>
+<div class="para">In other words,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B_\lambda\subseteq_{J_{&lt;\lambda}[A]}B^{i, j}_\lambda,
+\end{equation*}
+</div>
+<div class="para">and we are done. ◻</div>
+</div>
+<div class="para" id="internal-reflections-14">This can be improved by using diagonal intersections to achieve a single closed unbounded <span class="process-math">\(E\subseteq\kappa\)</span> that works for many <span class="process-math">\(\lambda\in N\cap\mathop{\mathrm{pcf}}(A)\)</span> simultaneously.</div>
+<div class="para logical" id="internal-reflections-15">
+<div class="para">
+<dfn class="terminology">Corollary 13</dfn>.  Suppose <span class="process-math">\(\langle \bar{f}^\lambda:\lambda\in\mathop{\mathrm{pcf}}(A)\rangle\in N_0\)</span> is such that each <span class="process-math">\(\bar{f}^\lambda\)</span> is minimally club continuous at cofinality <span class="process-math">\(\kappa\text{.}\)</span> There is a closed unbounded <span class="process-math">\(E\subseteq\kappa\)</span> such that for any <span class="process-math">\(i&lt;j&lt;k\)</span> in <span class="process-math">\(E\)</span> and <span class="process-math">\(\lambda\in N_i\cap\mathop{\mathrm{pcf}}(A)\text{,}\)</span> the set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B^{j, k}_\lambda = \{a\in A: \sup(N_j\cap a)&lt;f^\lambda_{\sup(N_k\cap\lambda)}(a)\}
+\end{equation*}
+</div>
+<div class="para">is a generator for <span class="process-math">\(\lambda\text{,}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B^{j,k}_\lambda\subseteq\left\{a\in A:\sup(N\cap a)= f^\lambda_{\sup(N\cap\lambda)}(a)\right\}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="internal-reflections-16">
+<div class="para">
+<em class="emphasis">Proof.</em> For <span class="process-math">\(\alpha&lt;\kappa\text{,}\)</span> we define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E_\alpha:= \bigcap\{E_\lambda:\lambda\in N_\alpha\cap\mathop{\mathrm{pcf}}(A)\}.
+\end{equation*}
+</div>
+<div class="para">This gives us a club subset of <span class="process-math">\(\kappa\)</span> that “works” for each <span class="process-math">\(\lambda\)</span> in <span class="process-math">\(N_\alpha\cap\mathop{\mathrm{pcf}}(A)\text{.}\)</span> Now let <span class="process-math">\(E\)</span> be the diagonal intersection of the <span class="process-math">\(E_\alpha\)</span> for <span class="process-math">\(\alpha&lt;\kappa\text{.}\)</span> If <span class="process-math">\(i&lt;j&lt;k\)</span> in <span class="process-math">\(E\)</span> and <span class="process-math">\(\lambda\in N_i\cap\mathop{\mathrm{pcf}}(A)\text{,}\)</span> then <span class="process-math">\(j\)</span> and <span class="process-math">\(k\)</span> are in <span class="process-math">\(E_\lambda\text{,}\)</span> and we have what we need. ◻</div>
+</div>
+<div class="para logical" id="internal-reflections-17">
+<div class="para">The strength of the preceding corollary is in the fact that for <span class="process-math">\(i&lt;j&lt;k\)</span> in <span class="process-math">\(E\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle B^{j,k}_\lambda:\lambda\in N_i\cap\mathop{\mathrm{pcf}}(A)\rangle\in N_{j+1},
+\end{equation*}
+</div>
+<div class="para">so that <span class="process-math">\(N_{j+1}\)</span> contains a sequence of generators for all <span class="process-math">\(\lambda\in N_i\cap\mathop{\mathrm{pcf}}(A)\)</span> that are each an internal reflection of the corresponding external generator <span class="process-math">\(B_\lambda^*\text{.}\)</span>
+</div>
+</div></section><section class="subsection" id="characterizing-characteristic-functions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6</span><span class="space"> </span><span class="title">Characterizing characteristic functions</span>
+</h3>
+<div class="para" id="characterizing-characteristic-functions-2">We won’t need the full power of what we obtained in the previous subsection right now. What we actually use is the following: if <span class="process-math">\(\lambda\in\mathop{\mathrm{pcf}}(A)\cap N\text{,}\)</span> there is a set <span class="process-math">\(B'_\lambda\)</span> such that</div>
+<div class="para logical" id="characterizing-characteristic-functions-3"><ul class="disc">
+<li id="characterizing-characteristic-functions-3-1-1"><div class="para" id="characterizing-characteristic-functions-3-1-1-1">
+<span class="process-math">\(B'_\lambda\)</span> is a generator for <span class="process-math">\(\lambda\text{,}\)</span>
+</div></li>
+<li id="characterizing-characteristic-functions-3-1-2"><div class="para" id="characterizing-characteristic-functions-3-1-2-1">
+<span class="process-math">\(B'_\lambda\)</span> is in <span class="process-math">\(N\text{,}\)</span> and</div></li>
+<li id="characterizing-characteristic-functions-3-1-3"><div class="para" id="characterizing-characteristic-functions-3-1-3-1"><span class="process-math">\(f^\lambda_{\sup(N\cap\lambda)}\restriction B_\lambda = \chi_N\restriction B_\lambda\text{.}\)</span></div></li>
+</ul></div>
+<div class="para logical" id="characterizing-characteristic-functions-4">
+<div class="para">The model <span class="process-math">\(N\)</span> sees that the first two of these statements are true, but the third statement is something external that someone inside of <span class="process-math">\(N\)</span> will not be able to see. What makes the argument work is that if <span class="process-math">\(\lambda=\max\mathop{\mathrm{pcf}}(A)\text{,}\)</span> then <span class="process-math">\(\max\mathop{\mathrm{pcf}}(A\setminus B'_\lambda)\)</span> will be less than <span class="process-math">\(\lambda\)</span> because <span class="process-math">\(B'_\lambda\)</span> is a generator, and <span class="process-math">\(A\setminus B'_\lambda\)</span> will still be in <span class="process-math">\(N\)</span> because both <span class="process-math">\(A\)</span> and <span class="process-math">\(B'_\lambda\)</span> are. The exact definition of <span class="process-math">\(B'_\lambda\)</span> won’t matter: we can just let <span class="process-math">\(i&lt;j&lt;k\)</span> be consecutive members of <span class="process-math">\(E\)</span> where <span class="process-math">\(i\)</span> is least such that <span class="process-math">\(\lambda\in N_i\cap\mathop{\mathrm{pcf}}(A)\text{,}\)</span> and set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B'_\lambda = B^{j, k}_\lambda \in N_{k+1}\subseteq N.
+\end{equation*}
+</div>
+</div>
+<div class="para" id="characterizing-characteristic-functions-5">
+<dfn class="terminology">Theorem 4</dfn>.  <em class="emphasis">Suppose <span class="process-math">\(N\)</span> is a <span class="process-math">\(\kappa\)</span>-internally approachable model containing <span class="process-math">\(A\text{,}\)</span> and <span class="process-math">\(\bar{F}=\langle \bar{f}^\lambda:\lambda\in\mathop{\mathrm{pcf}}(A)\rangle\in N\)</span> is such that each <span class="process-math">\(\bar{f}^\lambda\)</span> is minimally club continuous at cofinality <span class="process-math">\(\kappa\text{.}\)</span> Then there are <span class="process-math">\(\lambda_0&gt;\dots&gt;\lambda_n\)</span> in <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\)</span> with <span class="process-math">\(\lambda_0=\max\mathop{\mathrm{pcf}}(A)\)</span> such that<div class="displaymath process-math">
+\begin{equation*}
+A = \bigcup_{i\leq n}B'_{\lambda_i}
+\end{equation*}
+</div>and<div class="displaymath process-math">
+\begin{equation*}
+\chi_N = \max\left\{f^{\lambda_0}_{\sup(N\cap\lambda_0)},\dots, f^{\lambda_n}_{\sup(N\cap\lambda_n)}\right\}
+\end{equation*}
+</div></em>
+</div>
+<div class="para logical" id="characterizing-characteristic-functions-6">
+<div class="para">
+<em class="emphasis">Proof.</em> The proof consists of showing that <span class="process-math">\(A\)</span> can be covered by finitely many of our reflected generators, and we will do this through a recursion that must terminate after finitely many steps. We start by setting <span class="process-math">\(\lambda_0\)</span> equal to <span class="process-math">\(\max\mathop{\mathrm{pcf}}(A)\text{,}\)</span> and <span class="process-math">\(A_0 = A\text{.}\)</span> At stage <span class="process-math">\(n\text{,}\)</span> we will be handed a subset <span class="process-math">\(A_n\)</span> of <span class="process-math">\(A\)</span> that is in <span class="process-math">\(N\)</span> and cardinals <span class="process-math">\(\lambda_i\)</span> for <span class="process-math">\(i\leq n\text{.}\)</span> We now ask the question</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\label{eqn:65.7}
+\text{Is }A_n\setminus B'_{\lambda_n}=\emptyset?
+\end{equation*}
+</div>
+<div class="para">If it is, then our construction terminates. If not, we define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_{n+1} = A_n\setminus B'_{\lambda_n} = A\setminus\bigcup_{i\leq n}B'_{\lambda_i},
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lambda_{n+1} = \max\mathop{\mathrm{pcf}}(A_{n+1}).
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="characterizing-characteristic-functions-7">
+<div class="para">Notice that each <span class="process-math">\(A_i\)</span> is in <span class="process-math">\(N\)</span> because the generators <span class="process-math">\(B'_{\lambda_j}\)</span> for <span class="process-math">\(j&lt;i\)</span> are available in <span class="process-math">\(N\text{,}\)</span> so our construction can continue if needed. If <span class="process-math">\(A_{n+1}\)</span> is defined, then</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\begin{aligned}
+\lambda_{n+1} &amp;= \max\mathop{\mathrm{pcf}}(A_{n+1})\\
+&amp;=\max\mathop{\mathrm{pcf}}(A_n\setminus B'_{\max\mathop{\mathrm{pcf}}(A_n)})\\
+&amp;&lt;\max\mathop{\mathrm{pcf}}(A_n)=\lambda_n,
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">so we cannot continue for infinitely many steps, and we must arrive eventually at a stage where the answer to (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn:65.7" missing or not unique]</code>) is “yes”. At that point, we know</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+A = \bigcup_{i\leq n}B'_{\lambda_i}.
+\end{equation*}
+</div>
+<div class="para">Now for each <span class="process-math">\(i\leq n\text{,}\)</span> we know</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+f^{\lambda_i}_{\sup(N\cap\lambda_i)}\restriction B_{\lambda_i}' = \chi_N\restriction B'_{\lambda_i}
+\end{equation*}
+</div>
+<div class="para">by properties of <span class="process-math">\(B'_{\lambda_i}\text{,}\)</span> and</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+f^{\lambda_i}_{\sup(N\cap\lambda_i)}\leq \chi_N
+\end{equation*}
+</div>
+<div class="para">by (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn:65.8" missing or not unique]</code>), so the result follows. ◻</div>
+</div>
+<div class="para" id="characterizing-characteristic-functions-8">We state the following corollary with our assumptions spelled out explicitly.</div>
+<div class="para" id="characterizing-characteristic-functions-9">
+<dfn class="terminology">Corollary 14</dfn>.  Suppose <span class="process-math">\(A\)</span> is a progressive set of regular cardinals with <span class="process-math">\(|A|^+&lt;\min(A)\text{,}\)</span> and <span class="process-math">\(\kappa\)</span> is a regular cardinal such that <span class="process-math">\(|A|&lt;\kappa&lt;\min(A)\text{.}\)</span> Then there is a set <span class="process-math">\(F\subseteq\prod A\)</span> of cardinality <span class="process-math">\(\max\mathop{\mathrm{pcf}}(A)\)</span> such that whenever <span class="process-math">\(N\)</span> is a <span class="process-math">\(\kappa\)</span>-internally approachable model with <span class="process-math">\(A\in N\text{,}\)</span> the characteristic function of <span class="process-math">\(N\)</span> is in <span class="process-math">\(F\text{.}\)</span>
+</div>
+<div class="para" id="characterizing-characteristic-functions-10">This turns out to be a key ingredient in connecting pcf theory back to more traditional cardinal arithmetic. In particular, we want to show that in some situations, the characteristic function of <span class="process-math">\(N\)</span> determines much of the structure of <span class="process-math">\(N\cap\mathop{\mathrm{Ord}}\text{.}\)</span>
+</div></section><section class="subsection" id="the-cofinality-of-aleph_omegaaleph_0subseteq"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7</span><span class="space"> </span><span class="title">The cofinality of <span class="process-math">\(([\aleph_\omega]^{\aleph_0},\subseteq)\)</span></span>
+</h3>
+<div class="para" id="the-cofinality-of-aleph_omegaaleph_0subseteq-2">We will end this section with proving that the cofinality of the structure <span class="process-math">\(\left([\aleph_\omega]^{\aleph_0},\subseteq\right)\)</span> is <span class="process-math">\(\max\mathop{\mathrm{pcf}}(\{\aleph_n:n&lt;\omega\})\text{.}\)</span>
+</div>
+<div class="para logical" id="the-cofinality-of-aleph_omegaaleph_0subseteq-3">
+<div class="para">
+<dfn class="terminology">Proposition 15</dfn>.  Suppose <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> are <span class="process-math">\(\aleph_n\)</span>-internally approachable models for some non-zero <span class="process-math">\(n&lt;\omega\text{,}\)</span> and for all <span class="process-math">\(k&lt;\omega\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sup(N\cap\aleph_k) = \sup(M\cap\aleph_k).
+\end{equation*}
+</div>
+<div class="para">Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M\cap\aleph_\omega = N\cap\aleph_\omega.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="the-cofinality-of-aleph_omegaaleph_0subseteq-4">
+<div class="para">
+<em class="emphasis">Proof.</em> We show by induction on <span class="process-math">\(k&lt;\omega\)</span> that <span class="process-math">\(M\cap\aleph_k = N\cap\aleph_k\text{.}\)</span> This is true for <span class="process-math">\(k\leq n\)</span> because <span class="process-math">\(\omega_n+1\subseteq M\cap N\text{,}\)</span> so assume <span class="process-math">\(M\cap\aleph_k = N\cap\aleph_k\)</span> for some <span class="process-math">\(k\geq n\text{,}\)</span> and let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\delta = \sup(M\cap\aleph_{k+1}) = \sup(N\cap\aleph_{k+1}).
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> are both <span class="process-math">\(\aleph_n\)</span>-internally approachable, we know that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathop{\mathrm{cf}}(\delta)=\aleph_n
+\end{equation*}
+</div>
+<div class="para">and there is a closed unbounded <span class="process-math">\(C\subseteq\aleph_n\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\alpha\in C\Longrightarrow \sup(M_\alpha\cap\aleph_{k+1}) = \sup(N_\alpha\cap\aleph_{k+1}).
+\end{equation*}
+</div>
+<div class="para">If we define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D:=\{\sup(M_\alpha\cap\aleph_{k+1}):\alpha\in C\}=\{\sup(N_\alpha\cap\aleph_{k+1}):\alpha\in C\}
+\end{equation*}
+</div>
+<div class="para">then <span class="process-math">\(D\)</span> is a subset of <span class="process-math">\(M\cap N\)</span> that is closed and unbounded in <span class="process-math">\(\delta\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="the-cofinality-of-aleph_omegaaleph_0subseteq-5">
+<div class="para">It suffices to prove that <span class="process-math">\(M\cap\aleph_{k+1}\)</span> is subset of <span class="process-math">\(N\cap\aleph_{k+1}\text{.}\)</span> Given <span class="process-math">\(\alpha\in M\cap\aleph_{k+1}\)</span> we can fix an ordinal <span class="process-math">\(\gamma\in D\)</span> such that <span class="process-math">\(\alpha\leq\gamma\text{.}\)</span> This ordinal <span class="process-math">\(\gamma\)</span> is in both <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> and of cardinality at most <span class="process-math">\(\aleph_k\text{,}\)</span> so that there is a function <span class="process-math">\(f\)</span> in <span class="process-math">\(M\cap N\)</span> mapping <span class="process-math">\(\aleph_k\)</span> onto <span class="process-math">\(\gamma\text{.}\)</span> The ordinal <span class="process-math">\(\beta=f^{-1}(\{\alpha\})\)</span> is an element of <span class="process-math">\(M\cap \aleph_k\text{,}\)</span> hence an element of <span class="process-math">\(N\cap\aleph_k\)</span> by our induction hypothesis. But now</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\alpha = f(\beta) \in N
+\end{equation*}
+</div>
+<div class="para">and we are done. ◻</div>
+</div>
+<div class="para" id="the-cofinality-of-aleph_omegaaleph_0subseteq-6">The above proof admits many generalizations, and we shall take a look at some of these later on. The important thing to remember is that models are tightly connected with their characteristic functions, and in some sense this is why pcf theory has things to say about cardinal arithmetic: we can interchange information between sets of ordinals and products of functions using elementary submodels and their characteristic functions. But for now, we will be content with the following theorem which was promised in the introduction of this section.</div>
+<div class="para" id="the-cofinality-of-aleph_omegaaleph_0subseteq-7">
+<dfn class="terminology">Theorem 5</dfn>.  <em class="emphasis"><span class="process-math">\(\max\mathop{\mathrm{pcf}}(\{\aleph_n:n&lt;\omega\}) = \mathop{\mathrm{cf}}\left([\aleph_\omega]^{\aleph_0},\subseteq\right)\text{.}\)</span></em>
+</div>
+<div class="para logical" id="the-cofinality-of-aleph_omegaaleph_0subseteq-8">
+<div class="para">
+<em class="emphasis">Proof.</em> Let <span class="process-math">\(\lambda = \max\mathop{\mathrm{pcf}}(\{\aleph_n:n&lt;\omega\})\text{,}\)</span> let <span class="process-math">\(\mu\)</span> denote the cofinality of <span class="process-math">\([\aleph_\omega]^{\aleph_0}\text{,}\)</span> and define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A:=\{\aleph_n:2\leq n&lt;\omega\}.
+\end{equation*}
+</div>
+<div class="para">We note that <span class="process-math">\(\max\mathop{\mathrm{pcf}}(A)=\lambda\)</span> as well.</div>
+</div>
+<div class="para logical" id="the-cofinality-of-aleph_omegaaleph_0subseteq-9">
+<div class="para">Any countable subset <span class="process-math">\(\aleph_\omega\)</span> is covered by a set of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="  ">
+\begin{equation*}
+\label{eqn:65.9}
+M\cap\aleph_\omega
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(\aleph_1\)</span>-internally approachable model <span class="process-math">\(M\text{.}\)</span> There are at most <span class="process-math">\(\lambda\)</span> possibilities for the characteristic function of <span class="process-math">\(M\)</span> in <span class="process-math">\(A\)</span> by Corollary <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "cor:CaptureChar" missing or not unique]</code>, and so there at most <span class="process-math">\(\lambda\)</span> sets of the form (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn:65.9" missing or not unique]</code>) by Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "prop:ModEquProp" missing or not unique]</code>. So let us define</div>
+<div class="displaymath process-math" data-contains-math-knowls="  ">
+\begin{equation*}
+\mathcal{X} = \{M\cap\aleph_{\omega}:\text{ $M$ is an $\aleph_1$-approachable model containing $A$}\}.
+\end{equation*}
+</div>
+<div class="para">We know <span class="process-math">\(|\mathcal{X}|\leq\lambda\text{,}\)</span> and any countable subset of <span class="process-math">\(\aleph_\omega\)</span> is covered by a set in <span class="process-math">\(\mathcal{X}\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="the-cofinality-of-aleph_omegaaleph_0subseteq-10">
+<div class="para">To finish, note that if <span class="process-math">\(|X|=\aleph_1\)</span> then the cofinality of <span class="process-math">\([X]^{\aleph_0}\)</span> is <span class="process-math">\(\aleph_1\text{.}\)</span> So if <span class="process-math">\(\mathcal{P}_X\)</span> is a cofinal subset of <span class="process-math">\([X]^{\aleph_0}\)</span> of cardinality <span class="process-math">\(\aleph_1\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{P} = \bigcup\{\mathcal{P}_X: X\in\mathcal{X}\}
+\end{equation*}
+</div>
+<div class="para">is a cofinal subset of <span class="process-math">\([\aleph_\omega]^{\aleph_0}\)</span> of cardinality at most <span class="process-math">\(\lambda\text{,}\)</span> and <span class="process-math">\(\mu\leq\lambda\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="the-cofinality-of-aleph_omegaaleph_0subseteq-11">For the other direction, assume <span class="process-math">\(\mu\)</span> is strictly less than <span class="process-math">\(\lambda\text{,}\)</span> and let <span class="process-math">\(\mathcal{P}\)</span> be a cofinal subset of <span class="process-math">\([\aleph_\omega]^{\aleph_0}\)</span> of cardinality <span class="process-math">\(\mu\text{.}\)</span> Let <span class="process-math">\(\bar{f}^\lambda=\langle f^\lambda_\alpha:\alpha&lt;\lambda\rangle\)</span> be a scale in <span class="process-math">\(\prod A\)</span> modulo <span class="process-math">\(J_{&lt;\lambda}[A]\text{,}\)</span> and for each <span class="process-math">\(\alpha&lt;\lambda\)</span> let <span class="process-math">\(X_\alpha\)</span> be the range of <span class="process-math">\(f^\lambda_\alpha\text{.}\)</span>
+</div>
+<div class="para logical" id="the-cofinality-of-aleph_omegaaleph_0subseteq-12">
+<div class="para">Now <span class="process-math">\(\mathcal{P}\)</span> is cofinal in <span class="process-math">\([\aleph_\omega]^{\aleph_0}\)</span> so for each <span class="process-math">\(\alpha&lt;\lambda\)</span> there is an <span class="process-math">\(Y\in\mathcal{P}\)</span> with <span class="process-math">\(X_\alpha\subseteq Y\text{.}\)</span> Since <span class="process-math">\(\lambda\)</span> is a regular cardinal greater than <span class="process-math">\(|\mathcal{P}|\text{,}\)</span> there must exist a single <span class="process-math">\(Y\in\mathcal{P}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\{\alpha&lt;\lambda:\mathop{\mathrm{ran}}(f^\lambda_\alpha)\subseteq Y\}|=\lambda.
+\end{equation*}
+</div>
+<div class="para">Now let us consider the function <span class="process-math">\(g\in\prod A\)</span> defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(\aleph_n) = \sup(Y\cap\aleph_n)+1.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\bar{f}^\lambda\)</span> is a cofinality sequence for <span class="process-math">\(\lambda\text{,}\)</span> we know <span class="process-math">\(g\leq_{J_{&lt;\lambda}}f^\lambda_\alpha\)</span> for all sufficiently large <span class="process-math">\(\alpha&lt;\lambda\text{.}\)</span> But this cannot be the case if <span class="process-math">\(\alpha\)</span> is such that <span class="process-math">\(\mathop{\mathrm{ran}}(f^\lambda_\alpha)\subseteq Y\text{,}\)</span> and we have a contradiction. ◻</div>
+</div>
+<div class="para" id="the-cofinality-of-aleph_omegaaleph_0subseteq-13">
+<dfn class="terminology">Corollary 16</dfn>.  <span class="process-math">\(\aleph_\omega^{\aleph_0}= 2^{\aleph_0}\cdot \max\mathop{\mathrm{pcf}}(\{\aleph_n:n&lt;\omega\})\text{.}\)</span>
+</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="the-basic-pcf-toolkit.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="things-we-already-know.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

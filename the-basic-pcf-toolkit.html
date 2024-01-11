@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The basic pcf toolkit</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext article ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-article.html"><span class="title">blah</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="my-great-article.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-article.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\foo}{b^{ar}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="the-basic-pcf-toolkit.html" class="internal"><span class="codenumber">1</span> <span class="title">The basic pcf toolkit</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#what-is-mathopmathrmpcfa-again" class="internal"><span class="codenumber">1.1</span> <span class="title">What is <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\)</span> again?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#what-about-those-ideals-and-generator-things" class="internal"><span class="codenumber">1.2</span> <span class="title">What about those ideals and generator things?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#compactness-for-generators" class="internal"><span class="codenumber">1.3</span> <span class="title">Compactness for Generators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#the-ideals-j_lambdaa" class="internal"><span class="codenumber">1.4</span> <span class="title">The ideals <span class="process-math">\(J_{&lt;\lambda}[A]\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#cofinality-sequences" class="internal"><span class="codenumber">1.5</span> <span class="title">Cofinality sequences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#what-do-we-mean-by-pcf-structure" class="internal"><span class="codenumber">1.6</span> <span class="title">What do we mean by “pcf structure”?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#application-the-cofinality-of-prod-a" class="internal"><span class="codenumber">1.7</span> <span class="title">Application: the cofinality of <span class="process-math">\(\prod A\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html" class="internal"><span class="codenumber">2</span> <span class="title">Characteristic Functions and <span class="process-math">\(\mathop{\mathrm{cf}}\left([\aleph_\omega]^{\aleph_0},\subseteq\right)\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#internally-approachable-models" class="internal"><span class="codenumber">2.1</span> <span class="title">Internally Approachable Models</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#characteristic-functions-of-models" class="internal"><span class="codenumber">2.2</span> <span class="title">Characteristic functions of models</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#building-generators-from-cofinality-sequences" class="internal"><span class="codenumber">2.3</span> <span class="title">Building generators from cofinality sequences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#minimal-club-continuity" class="internal"><span class="codenumber">2.4</span> <span class="title">Minimal club continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#internal-reflections" class="internal"><span class="codenumber">2.5</span> <span class="title">Internal reflections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#characterizing-characteristic-functions" class="internal"><span class="codenumber">2.6</span> <span class="title">Characterizing characteristic functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#the-cofinality-of-aleph_omegaaleph_0subseteq" class="internal"><span class="codenumber">2.7</span> <span class="title">The cofinality of <span class="process-math">\(([\aleph_\omega]^{\aleph_0},\subseteq)\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="things-we-already-know.html" class="internal"><span class="codenumber">3</span> <span class="title">Things we already know(?)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="things-we-already-know.html#no-holes-theorem" class="internal"><span class="codenumber">3.1</span> <span class="title">No Holes Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="things-we-already-know.html#scales-at-cardinals-of-uncountable-cofinality" class="internal"><span class="codenumber">3.2</span> <span class="title">Scales at cardinals of uncountable cofinality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="transitive-generators-and-localization.html" class="internal"><span class="codenumber">4</span> <span class="title">Transitive Generators and Localization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="transitive-generators-and-localization.html#what-are-transitive-generators" class="internal"><span class="codenumber">4.1</span> <span class="title">What are transitive generators?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="transitive-generators-and-localization.html#a-naive-attempt" class="internal"><span class="codenumber">4.2</span> <span class="title">A naive attempt</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="transitive-generators-and-localization.html#existence-of-transitive-generators" class="internal"><span class="codenumber">4.3</span> <span class="title">Existence of Transitive Generators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="transitive-generators-and-localization.html#the-localization-theorem" class="internal"><span class="codenumber">4.4</span> <span class="title">The Localization Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="no-large-intervals.html" class="internal"><span class="codenumber">5</span> <span class="title">No large intervals</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="the-basic-pcf-toolkit"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1</span><span class="space"> </span><span class="title">The basic pcf toolkit</span>
+</h2>
+<section class="subsection" id="what-is-mathopmathrmpcfa-again"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">What is <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\)</span> again?</span>
+</h3>
+<div class="para logical" id="what-is-mathopmathrmpcfa-again-2">
+<div class="para">We assume that <span class="process-math">\(A\)</span> is a progressive set of regular cardinals, that is <span class="process-math">\(|A|&lt;\min(A)\text{.}\)</span> We have defined <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\)</span> to be those cardinals <span class="process-math">\(\lambda\)</span> that appear as the bounding number <span class="process-math">\(\mathfrak{b}(I)\)</span> for some proper ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(\lambda\text{.}\)</span> Using the density of exact sequences, we obtained an equivalent characterization in terms of true cofinalities.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathop{\mathrm{pcf}}(A) = \{\mathop{\mathrm{tcf}}(I): I\text{ a proper ideal on $A$ for which $\mathop{\mathrm{tcf}}(I)$ exists}\}.
+\end{equation*}
+</div>
+<div class="para">This can be re-formulated in terms of ultrafilters as well, yielding Shelah’s original definition:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathop{\mathrm{pcf}}(A) = \left\{\mathop{\mathrm{cf}}\left(\prod A/ U\right): \text{$U$ an ultrafilter on $A$}\right\}.
+\end{equation*}
+</div>
+<div class="para">We make extensive of use of the fact that <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\)</span> has a maximum value, which we denote <span class="process-math">\(\max\mathop{\mathrm{pcf}}(A)\text{.}\)</span>
+</div>
+</div></section><section class="subsection" id="what-about-those-ideals-and-generator-things"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">What about those ideals and generator things?</span>
+</h3>
+<div class="para" id="what-about-those-ideals-and-generator-things-2">In this part, we do a REALLY quick review of some of the work done earlier in the course.</div>
+<div class="para" id="what-about-those-ideals-and-generator-things-3">Let <span class="process-math">\(A\)</span> be a progressive set of regular cardinals, and let <span class="process-math">\(I\)</span> be a proper ideal on <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="para logical" id="what-about-those-ideals-and-generator-things-4"><ol class="decimal">
+<li id="what-about-those-ideals-and-generator-things-4-1-1"><div class="para" id="what-about-those-ideals-and-generator-things-4-1-1-1">We know that the structure <span class="process-math">\(\prod A/ I\)</span> has a bounding number <span class="process-math">\(\mathfrak{b}(I)\text{,}\)</span> and that this bounding number is an infinite regular cardinal. By definition, <span class="process-math">\(\mathfrak{b}(I)\)</span> is the largest cardinal <span class="process-math">\(\lambda\)</span> such that the reduced product <span class="process-math">\(\prod A/ I\)</span> is <span class="process-math">\(\lambda\)</span>-directed.</div></li>
+<li id="what-about-those-ideals-and-generator-things-4-1-2">
+<div class="para" id="what-about-those-ideals-and-generator-things-4-1-2-1">There is a set <span class="process-math">\(B_I\)</span> in <span class="process-math">\(I^+\)</span> such that</div>
+<div class="para logical" id="what-about-those-ideals-and-generator-things-4-1-2-2"><ul class="disc">
+<li id="what-about-those-ideals-and-generator-things-4-1-2-2-1-1"><div class="para" id="what-about-those-ideals-and-generator-things-4-1-2-2-1-1-1">
+<span class="process-math">\(\mathop{\mathrm{tcf}}\left(\prod A/ I\restriction B_I\right)=\lambda\text{,}\)</span> and</div></li>
+<li id="what-about-those-ideals-and-generator-things-4-1-2-2-1-2"><div class="para" id="what-about-those-ideals-and-generator-things-4-1-2-2-1-2-1">if <span class="process-math">\(B\subseteq A\)</span> and <span class="process-math">\(\mathop{\mathrm{tcf}}(\left(\prod A/ I\restriction B\right)=\lambda\text{,}\)</span> then <span class="process-math">\(B\subseteq B_I\)</span> modulo <span class="process-math">\(I\text{.}\)</span>
+</div></li>
+</ul></div>
+<div class="para" id="what-about-those-ideals-and-generator-things-4-1-2-3">Thus, he collection of <span class="process-math">\(B\in I^+\)</span> for which the product <span class="process-math">\(\prod B/I\)</span> has true cofinality <span class="process-math">\(\lambda\)</span> is non-empty, and has a maximal (modulo <span class="process-math">\(I\)</span>) member which we denote <span class="process-math">\(B_I\text{.}\)</span> This is one of the key uses of our assumption that <span class="process-math">\(|A|&lt;\min(A)\text{,}\)</span> as we use the density of exact upper bounds to produce <span class="process-math">\(B_I\text{.}\)</span>
+</div>
+</li>
+<li id="what-about-those-ideals-and-generator-things-4-1-3"><div class="para" id="what-about-those-ideals-and-generator-things-4-1-3-1">By induction we can build a sequence <span class="process-math">\(\langle B_\lambda[A]:\lambda\in\mathop{\mathrm{pcf}}(A)\rangle\)</span> of subsets of <span class="process-math">\(A\)</span> and an increasing sequence of proper ideals <span class="process-math">\(I_{&lt;\lambda}\)</span> on <span class="process-math">\(A\)</span> such that</div></li>
+</ol></div></section><section class="subsection" id="compactness-for-generators"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3</span><span class="space"> </span><span class="title">Compactness for Generators</span>
+</h3>
+<div class="para" id="compactness-for-generators-2">
+<dfn class="terminology">Lemma 1</dfn>.  Suppose <span class="process-math">\(X\subseteq A\text{.}\)</span> Then <span class="process-math">\(\max\mathop{\mathrm{pcf}}(X)\)</span> is the least <span class="process-math">\(\lambda\)</span> such that <span class="process-math">\(X\in I_{\leq\lambda}\text{.}\)</span>
+</div>
+<div class="para logical" id="compactness-for-generators-3">
+<div class="para">
+<em class="emphasis">Proof.</em> If <span class="process-math">\(X\in I_{\leq\lambda}\)</span> then <span class="process-math">\(\max\mathop{\mathrm{pcf}}(X)\leq\lambda\text{,}\)</span> as there is a finite <span class="process-math">\(Y\subseteq\mathop{\mathrm{pcf}}(A)\cap\lambda^+\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X\subseteq\bigcup_{\theta\in Y} B_\theta[A].
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="compactness-for-generators-4">
+<div class="para">Now if <span class="process-math">\(\lambda\)</span> is the <em class="emphasis">least</em> element of <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\)</span> with <span class="process-math">\(X\in I_{\leq\lambda}\)</span> then we know a couple of things. First, <span class="process-math">\(X\)</span> is <em class="emphasis">NOT</em> in <span class="process-math">\(I_{&lt;\lambda}\text{.}\)</span> Second,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X\setminus B_{\lambda}[A]\in I_{&lt;\lambda}
+\end{equation*}
+</div>
+<div class="para">because <span class="process-math">\(B_{\lambda}[A]\)</span> generates <span class="process-math">\(I_{\leq\lambda}\)</span> over <span class="process-math">\(I_{&lt;\lambda}\text{.}\)</span> Putting these facts together tells us</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lambda = \mathop{\mathrm{tcf}}\left(\prod X/ I_{&lt;\lambda}\restriction X\right)
+\end{equation*}
+</div>
+<div class="para">and therefore <span class="process-math">\(\lambda\)</span> is in <span class="process-math">\(\mathop{\mathrm{pcf}}(X)\text{.}\)</span> ◻</div>
+</div>
+<div class="para" id="compactness-for-generators-5">Notice that the above proof shows us the following useful fact:</div>
+<div class="para logical" id="compactness-for-generators-6">
+<div class="para">
+<dfn class="terminology">Corollary 2</dfn>.  Suppose <span class="process-math">\(X\subseteq A\)</span> and <span class="process-math">\(\lambda=\max\mathop{\mathrm{pcf}}(X)\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\max\mathop{\mathrm{pcf}}\left(X\setminus B_\lambda[A]\right)&lt;\lambda.
+\end{equation*}
+</div>
+</div>
+<div class="para" id="compactness-for-generators-7">
+<dfn class="terminology">Theorem 1</dfn> (Compactness Property for Generators).  <em class="emphasis">If <span class="process-math">\(X\subseteq A\)</span> then there is a finite subset <span class="process-math">\(\{\lambda_i:i&lt;n\}\)</span> of <span class="process-math">\(\mathop{\mathrm{pcf}}(X)\)</span> such that<div class="displaymath process-math">
+\begin{equation*}
+X\subseteq B_{\lambda_0}[A]\cup\dots\cup B_{\lambda_{n-1}}[A].
+\end{equation*}
+</div></em>
+</div>
+<div class="para" id="compactness-for-generators-8">
+<em class="emphasis">Proof.</em> Let <span class="process-math">\(X_0 = X\text{,}\)</span> and let <span class="process-math">\(\lambda_0 = \max\mathop{\mathrm{pcf}}(X)\text{.}\)</span> We define sets <span class="process-math">\(X_i\)</span> and cardinals <span class="process-math">\(\lambda_i\)</span> by the following recipe:</div>
+<div class="para logical" id="compactness-for-generators-9">
+<div class="para">If <span class="process-math">\(X_i=\emptyset\text{,}\)</span> then the construction halts. If <span class="process-math">\(X_i\)</span> is non-empty, define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lambda_i = \max\mathop{\mathrm{pcf}}(X_i),
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X_{i+1} = X_i\setminus B_{\lambda_i}[A].
+\end{equation*}
+</div>
+<div class="para">By the preceding lemma, we know that if <span class="process-math">\(\lambda_{i+1}\)</span> is defined, then <span class="process-math">\(\lambda_{i+1}&lt;\lambda_i\text{.}\)</span> Thus, we must reach a stage <span class="process-math">\(n\)</span> where <span class="process-math">\(X_n = \emptyset\text{,}\)</span> and the conclusion follows. ◻</div>
+</div>
+<div class="para" id="compactness-for-generators-10">If <span class="process-math">\(X\subseteq A\)</span> and <span class="process-math">\(A\)</span> is a progressive set of regular cardinals, then how do the ideals <span class="process-math">\(I_{&lt;\lambda}[A]\)</span> (constructed for <span class="process-math">\(A\)</span>) and the corresponding ideals <span class="process-math">\(I_{&lt;\lambda}[X]\)</span> (constructed for <span class="process-math">\(X\)</span>) relate?</div></section><section class="subsection" id="the-ideals-j_lambdaa"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4</span><span class="space"> </span><span class="title">The ideals <span class="process-math">\(J_{&lt;\lambda}[A]\)</span></span>
+</h3>
+<div class="para logical" id="the-ideals-j_lambdaa-2">
+<div class="para">
+<dfn class="terminology">Definition 3</dfn>.  Suppose <span class="process-math">\(A\)</span> is a progressive set of regular cardinals. For any infinite cardinal <span class="process-math">\(\lambda\text{,}\)</span> we define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+J_{&lt;\lambda}[A]: = \{X\subseteq A: \max\mathop{\mathrm{pcf}}(A)&lt;\lambda\}.
+\end{equation*}
+</div>
+</div>
+<div class="para" id="the-ideals-j_lambdaa-3">
+<dfn class="terminology">Proposition 4</dfn>.  Let <span class="process-math">\(A\)</span> be a progressive set of regular cardinals, and let <span class="process-math">\(\lambda\)</span> be an infinite cardinal.</div>
+<div class="para logical" id="the-ideals-j_lambdaa-4"><ol class="decimal">
+<li id="the-ideals-j_lambdaa-4-1-1"><div class="para" id="the-ideals-j_lambdaa-4-1-1-1">
+<span class="process-math">\(J_{&lt;\lambda}[A]\)</span> is an ideal on <span class="process-math">\(A\text{,}\)</span> and is a proper ideal if and only if <span class="process-math">\(\lambda\leq\max\mathop{\mathrm{pcf}}(A)\text{.}\)</span>
+</div></li>
+<li id="the-ideals-j_lambdaa-4-1-2"><div class="para" id="the-ideals-j_lambdaa-4-1-2-1">
+<span class="process-math">\(J_{&lt;\lambda}\subsetneqq J_{\leq\lambda}\)</span> if and only if <span class="process-math">\(\lambda\in\mathop{\mathrm{pcf}}(A)\text{.}\)</span>
+</div></li>
+<li id="the-ideals-j_lambdaa-4-1-3"><div class="para" id="the-ideals-j_lambdaa-4-1-3-1">If <span class="process-math">\(\lambda\in\mathop{\mathrm{pcf}}(A)\)</span> then <span class="process-math">\(J_{&lt;\lambda}[A]= I_{&lt;\lambda}\text{.}\)</span>
+</div></li>
+</ol></div>
+<div class="para logical" id="the-ideals-j_lambdaa-5">
+<div class="para">
+<em class="emphasis">Proof.</em> We prove only the third statement, so assume <span class="process-math">\(\lambda\in\mathop{\mathrm{pcf}}(A)\text{.}\)</span> Since</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\max\mathop{\mathrm{pcf}}(B_\theta[A])=\theta
+\end{equation*}
+</div>
+<div class="para">for each <span class="process-math">\(\theta\in\mathop{\mathrm{pcf}}(A)\text{,}\)</span> we know</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I_{&lt;\lambda}\subseteq J_{&lt;\lambda}[A].
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="the-ideals-j_lambdaa-6">
+<div class="para">For the other direction, suppose <span class="process-math">\(\max\mathop{\mathrm{pcf}}(X)&lt;\lambda\text{.}\)</span> Apply the Compactness Property for Generators and find <span class="process-math">\(\lambda_0&gt;\dots&gt;\lambda_{n-1}\)</span> in <span class="process-math">\(\mathop{\mathrm{pcf}}(X)\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X\subseteq \bigcup_{i&lt;n}B_{\lambda_i}[A].
+\end{equation*}
+</div>
+<div class="para">Since each <span class="process-math">\(\lambda_i\)</span> is less than <span class="process-math">\(\lambda\text{,}\)</span> we know <span class="process-math">\(X\in I_{&lt;\lambda}\text{.}\)</span> ◻</div>
+</div></section><section class="subsection" id="cofinality-sequences"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5</span><span class="space"> </span><span class="title">Cofinality sequences</span>
+</h3>
+<div class="para" id="cofinality-sequences-2">For <span class="process-math">\(\lambda\in\mathop{\mathrm{pcf}}(A)\text{,}\)</span> fix a sequence <span class="process-math">\(\bar{f}^\lambda=\langle f^\lambda_\alpha:\alpha&lt;\lambda\rangle\)</span> of functions in <span class="process-math">\(\prod A\)</span> such that</div>
+<div class="para" id="cofinality-sequences-3">We call <span class="process-math">\(\bar{f}^\lambda\)</span> a cofinality sequence for <span class="process-math">\(\lambda\text{,}\)</span> and the entire collection <span class="process-math">\(\langle \bar{f}^\lambda:\lambda\in\mathop{\mathrm{pcf}}(A)\rangle\)</span> will be referred to as a <em class="emphasis">cofinality array</em> for <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\text{.}\)</span>
+</div>
+<div class="para" id="cofinality-sequences-4">For now, we will use these sequences in the following way:</div>
+<div class="para logical" id="cofinality-sequences-5">
+<div class="para">
+<dfn class="terminology">Lemma 5</dfn>.  Suppose <span class="process-math">\(X\subseteq A\text{,}\)</span> and let <span class="process-math">\(\lambda = \max\mathop{\mathrm{pcf}}(X)\text{.}\)</span> Given a function <span class="process-math">\(g\in\prod A\text{,}\)</span> there is an <span class="process-math">\(\alpha&lt;\lambda\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{a\in X: f^\lambda_\alpha(a)\leq g(a)\}\in J_{&lt;\lambda}[A].
+\end{equation*}
+</div>
+</div>
+<div class="para" id="cofinality-sequences-6">In English, if <span class="process-math">\(\lambda = \max\mathop{\mathrm{pcf}}(X)\)</span> then any function in <span class="process-math">\(\prod X\)</span> can be dominated by some <span class="process-math">\(f^\lambda_\alpha\text{,}\)</span> except for a set of exceptions that has smaller <span class="process-math">\(\max\mathop{\mathrm{pcf}}\text{.}\)</span>
+</div>
+<div class="para logical" id="cofinality-sequences-7">
+<div class="para">
+<em class="emphasis">Proof.</em> Since <span class="process-math">\(\lambda = \max\mathop{\mathrm{pcf}}(X)\text{,}\)</span> we know that <span class="process-math">\(X\)</span> is a subset of <span class="process-math">\(B_\lambda[A]\)</span> modulo <span class="process-math">\(J_{&lt;\lambda}[A]\text{,}\)</span> as <span class="process-math">\(B_\lambda[A]\)</span> generates <span class="process-math">\(J_{\leq\lambda}[A]\)</span> over <span class="process-math">\(J_{&lt;\lambda}[A]\text{.}\)</span> Thus,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X\setminus B_{\lambda}[A]\in J_{&lt;\lambda}[A].
+\end{equation*}
+</div>
+<div class="para">Given <span class="process-math">\(g\in\prod A\text{,}\)</span> choose <span class="process-math">\(\alpha&lt;\lambda\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g&lt;f^\lambda_\alpha\mod J_{&lt;\lambda}[A]\restriction B_\lambda,
+\end{equation*}
+</div>
+<div class="para">so for <span class="process-math">\(J_{&lt;\lambda}[A]\)</span>-almost all <span class="process-math">\(a\in B_\lambda[A]\text{,}\)</span> we have <span class="process-math">\(g(a)&lt; f^\lambda_\alpha(a)\text{.}\)</span> Then for this choice of <span class="process-math">\(\alpha\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{a\in X: f^\lambda_\alpha(a)\leq g(a)\}\in J_{&lt;\lambda}[A].
+\end{equation*}
+</div>
+<div class="para"> ◻</div>
+</div></section><section class="subsection" id="what-do-we-mean-by-pcf-structure"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6</span><span class="space"> </span><span class="title">What do we mean by “pcf structure”?</span>
+</h3>
+<div class="para" id="what-do-we-mean-by-pcf-structure-2">Given a progressive set of regular cardinals <span class="process-math">\(A\text{,}\)</span> we will often speak about the <em class="emphasis"><span class="process-math">\(\mathop{\mathrm{pcf}}\)</span>-structure of <span class="process-math">\(A\)</span></em>, and by this we mean the collection of ideals <span class="process-math">\(J_{&lt;\lambda}[A]\text{,}\)</span> the sequences of generators <span class="process-math">\(B_\lambda[A]\)</span> for <span class="process-math">\(\lambda\in\mathop{\mathrm{pcf}}(A)\text{,}\)</span> and some choice of cofinality sequences <span class="process-math">\(\bar{f}^\lambda\)</span> for <span class="process-math">\(\lambda\)</span> in <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\text{.}\)</span>
+</div>
+<div class="para" id="what-do-we-mean-by-pcf-structure-3">Note that the ideals are unique and the generator <span class="process-math">\(B_\lambda[A]\)</span> is unique modulo the ideal <span class="process-math">\(J_{&lt;\lambda}[A]\text{.}\)</span> The sequence of ideals is also completely determined by the sequence of generators <span class="process-math">\(\langle B_\lambda[A]:\lambda\in\mathop{\mathrm{pcf}}(A)\rangle\text{,}\)</span> as <span class="process-math">\(J_{&lt;\lambda}[A]\)</span> is just the ideal on <span class="process-math">\(A\)</span> generated by the family <span class="process-math">\(\{B_\theta[A]:\theta\in\mathop{\mathrm{pcf}}(A)\cap\lambda\}\text{.}\)</span>
+</div>
+<div class="para logical" id="what-do-we-mean-by-pcf-structure-4">
+<div class="para">Note that by the density of exact upper bounds, we can assume that <span class="process-math">\(\bar{f}^\lambda\)</span> has an exact upper bound <span class="process-math">\(f^*_\lambda\)</span> mod <span class="process-math">\(J_{&lt;\lambda}[A]\)</span> such that <span class="process-math">\(f_\lambda^*(a)\leq a\)</span> for all <span class="process-math">\(a\in A\text{.}\)</span> If this is the case, then we can recover a generator <span class="process-math">\(B^*_\lambda\)</span> from <span class="process-math">\(\bar{f}^\lambda\)</span> by defining</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B^*_\lambda:=\{a\in A: f^*_\lambda(a) = a\}.
+\end{equation*}
+</div>
+<div class="para">We will pursue this in more detail a little later on.</div>
+</div></section><section class="subsection" id="application-the-cofinality-of-prod-a"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.7</span><span class="space"> </span><span class="title">Application: the cofinality of <span class="process-math">\(\prod A\)</span></span>
+</h3>
+<div class="para" id="application-the-cofinality-of-prod-a-2">
+<dfn class="terminology">Theorem 2</dfn>.  <em class="emphasis">Suppose <span class="process-math">\(A\)</span> is a progressive set of regular cardinals. Then<div class="displaymath process-math">
+\begin{equation*}
+\mathop{\mathrm{cf}}\left(\prod A, &lt;\right) = \max\mathop{\mathrm{pcf}}(A).
+\end{equation*}
+</div></em>
+</div>
+<div class="para" id="application-the-cofinality-of-prod-a-3">
+<em class="emphasis">Proof.</em> Let <span class="process-math">\(\langle B_\lambda[A]:\lambda\in\mathop{\mathrm{pcf}}(A)\rangle\)</span> and <span class="process-math">\(\langle\bar{f}^\lambda:\lambda\in\mathop{\mathrm{pcf}}(A)\rangle\)</span> generate the pcf structure of <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="para logical" id="application-the-cofinality-of-prod-a-4">
+<div class="para">Given <span class="process-math">\(g\in\prod A\)</span> we claim there is a finite subset <span class="process-math">\(\{\lambda_i:i&lt;n\}\)</span> of <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\)</span> and ordinals <span class="process-math">\(\alpha_i&lt;\lambda_i\)</span> for <span class="process-math">\(i&lt;n\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g&lt;\max\{f^{\lambda_i}_{\alpha_i}:i&lt;n\}
+\end{equation*}
+</div>
+<div class="para">in <span class="process-math">\(\prod A\text{.}\)</span> Clearly this is sufficient, as there are at most <span class="process-math">\(\max\mathop{\mathrm{pcf}}(A)\)</span> possibilities for the functions as on the right hand side.</div>
+</div>
+<div class="para logical" id="application-the-cofinality-of-prod-a-5">
+<div class="para">We work by induction, similar to how we proved Theorem <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "thm1" missing or not unique]</code>, except this time we use Lemma <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "lem4" missing or not unique]</code> to fuel the argument. The idea is as follows: let <span class="process-math">\(\lambda=\max\mathop{\mathrm{pcf}}(A)\text{,}\)</span> and choose <span class="process-math">\(\alpha&lt;\lambda\)</span> such that <span class="process-math">\(g&lt;_{J_{&lt;\lambda}[A]} f^\lambda_\alpha\text{.}\)</span> This means <span class="process-math">\(f^\lambda_\alpha\)</span> does what we want, except for a set of exceptions that is in <span class="process-math">\(J_{&lt;\lambda}[A]\text{,}\)</span> that is,</div>
+<div class="displaymath process-math" data-contains-math-knowls="  ">
+\begin{equation*}
+\max\mathop{\mathrm{pcf}}\{a\in A: f^\lambda_\alpha(a)\leq g(a)\}&lt;\lambda.
+\end{equation*}
+</div>
+<div class="para">If this set is non-empty, then we continue by applying Lemma <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "lem4" missing or not unique]</code>.</div>
+</div>
+<div class="para" id="application-the-cofinality-of-prod-a-6">In more precise language, we will implement a construction that attempts to define sets <span class="process-math">\(A_i\text{,}\)</span> cardinals <span class="process-math">\(\lambda_i\text{,}\)</span> and ordinals <span class="process-math">\(\alpha_i&lt;\lambda_i\)</span> for each <span class="process-math">\(i&lt;\omega\text{.}\)</span>
+</div>
+<div class="para logical" id="application-the-cofinality-of-prod-a-7">
+<div class="para">We begin by setting <span class="process-math">\(A_0 = A\)</span> and <span class="process-math">\(\lambda_0=\max\mathop{\mathrm{pcf}}(A_0)\text{.}\)</span> We let <span class="process-math">\(\alpha_0&lt;\lambda_0\)</span> be the least ordinal such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{a\in A_0 : f^{\lambda_0}_{\alpha_0}\leq g(a)\}\in J_{&lt;_{\lambda_0}}.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="application-the-cofinality-of-prod-a-8">
+<div class="para">Given <span class="process-math">\(A_i\text{,}\)</span> if <span class="process-math">\(A_i\)</span> is non-empty then set <span class="process-math">\(\lambda_i = \max\mathop{\mathrm{pcf}}(A_i)\)</span> and let <span class="process-math">\(\alpha_i&lt;\lambda_i\)</span> be least such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{a\in A_i: f^{\lambda_i}_{\alpha_i}(a)\leq g(a)\}\in J_{&lt;_{\lambda_i}}.
+\end{equation*}
+</div>
+<div class="para">Such an <span class="process-math">\(\alpha_i\)</span> exists by way of Lemma <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "lem4" missing or not unique]</code>. Finally, define</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A_{i+1} = \{a\in A_i: f^{\lambda_i}_{\alpha_i}(a)\leq g(a)\}.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="application-the-cofinality-of-prod-a-9">
+<div class="para">Note that our construction guarantees that if <span class="process-math">\(A_{i+1}\)</span> is non-empty, then <span class="process-math">\(\lambda_{i+1}\)</span> is strictly less than <span class="process-math">\(\lambda_i\text{.}\)</span> Thus, there must be some least <span class="process-math">\(n\)</span> where <span class="process-math">\(A_n\)</span> is empty. This means that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\forall a\in A)(\exists i&lt; n)\left[ g(a)&lt;f^{\lambda_i}_{\alpha_i}(a)\right],
+\end{equation*}
+</div>
+<div class="para">and so we are done. ◻</div>
+</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="my-great-article.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

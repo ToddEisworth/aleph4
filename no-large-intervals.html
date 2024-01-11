@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>No large intervals</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext article ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-article.html"><span class="title">blah</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="transitive-generators-and-localization.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-article.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\foo}{b^{ar}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="the-basic-pcf-toolkit.html" class="internal"><span class="codenumber">1</span> <span class="title">The basic pcf toolkit</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#what-is-mathopmathrmpcfa-again" class="internal"><span class="codenumber">1.1</span> <span class="title">What is <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\)</span> again?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#what-about-those-ideals-and-generator-things" class="internal"><span class="codenumber">1.2</span> <span class="title">What about those ideals and generator things?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#compactness-for-generators" class="internal"><span class="codenumber">1.3</span> <span class="title">Compactness for Generators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#the-ideals-j_lambdaa" class="internal"><span class="codenumber">1.4</span> <span class="title">The ideals <span class="process-math">\(J_{&lt;\lambda}[A]\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#cofinality-sequences" class="internal"><span class="codenumber">1.5</span> <span class="title">Cofinality sequences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#what-do-we-mean-by-pcf-structure" class="internal"><span class="codenumber">1.6</span> <span class="title">What do we mean by “pcf structure”?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-basic-pcf-toolkit.html#application-the-cofinality-of-prod-a" class="internal"><span class="codenumber">1.7</span> <span class="title">Application: the cofinality of <span class="process-math">\(\prod A\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html" class="internal"><span class="codenumber">2</span> <span class="title">Characteristic Functions and <span class="process-math">\(\mathop{\mathrm{cf}}\left([\aleph_\omega]^{\aleph_0},\subseteq\right)\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#internally-approachable-models" class="internal"><span class="codenumber">2.1</span> <span class="title">Internally Approachable Models</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#characteristic-functions-of-models" class="internal"><span class="codenumber">2.2</span> <span class="title">Characteristic functions of models</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#building-generators-from-cofinality-sequences" class="internal"><span class="codenumber">2.3</span> <span class="title">Building generators from cofinality sequences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#minimal-club-continuity" class="internal"><span class="codenumber">2.4</span> <span class="title">Minimal club continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#internal-reflections" class="internal"><span class="codenumber">2.5</span> <span class="title">Internal reflections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#characterizing-characteristic-functions" class="internal"><span class="codenumber">2.6</span> <span class="title">Characterizing characteristic functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="characteristic-functions-and-mathopmathrmcfleftaleph_omegaaleph_0subseteqright.html#the-cofinality-of-aleph_omegaaleph_0subseteq" class="internal"><span class="codenumber">2.7</span> <span class="title">The cofinality of <span class="process-math">\(([\aleph_\omega]^{\aleph_0},\subseteq)\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="things-we-already-know.html" class="internal"><span class="codenumber">3</span> <span class="title">Things we already know(?)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="things-we-already-know.html#no-holes-theorem" class="internal"><span class="codenumber">3.1</span> <span class="title">No Holes Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="things-we-already-know.html#scales-at-cardinals-of-uncountable-cofinality" class="internal"><span class="codenumber">3.2</span> <span class="title">Scales at cardinals of uncountable cofinality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="transitive-generators-and-localization.html" class="internal"><span class="codenumber">4</span> <span class="title">Transitive Generators and Localization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="transitive-generators-and-localization.html#what-are-transitive-generators" class="internal"><span class="codenumber">4.1</span> <span class="title">What are transitive generators?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="transitive-generators-and-localization.html#a-naive-attempt" class="internal"><span class="codenumber">4.2</span> <span class="title">A naive attempt</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="transitive-generators-and-localization.html#existence-of-transitive-generators" class="internal"><span class="codenumber">4.3</span> <span class="title">Existence of Transitive Generators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="transitive-generators-and-localization.html#the-localization-theorem" class="internal"><span class="codenumber">4.4</span> <span class="title">The Localization Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="no-large-intervals.html" class="internal"><span class="codenumber">5</span> <span class="title">No large intervals</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="no-large-intervals"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">5</span><span class="space"> </span><span class="title">No large intervals</span>
+</h2>
+<div class="para" id="no-large-intervals-2">
+<dfn class="terminology">Theorem 11</dfn>.  <em class="emphasis">If <span class="process-math">\(A\)</span> is a progressive set of regular cardinals, then <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\)</span> cannot contain an interval of cardinality <span class="process-math">\(|A|^{+4}\text{.}\)</span></em>
+</div>
+<div class="para" id="no-large-intervals-3">
+<em class="emphasis">Proof.</em> Suppose by way of contradiction that <span class="process-math">\(\mathop{\mathrm{pcf}}(A)\)</span> contains an interval <span class="process-math">\(X\)</span> of regular cardinals of cardinality <span class="process-math">\(|A|^{+4}\text{.}\)</span> We may assume that <span class="process-math">\(X\)</span> consists entirely of successor ordinals, and that <span class="process-math">\(X\)</span> is of order-type <span class="process-math">\(|A|^+\text{.}\)</span>
+</div>
+<div class="para logical" id="no-large-intervals-4">
+<div class="para">If we let <span class="process-math">\(\kappa\)</span> denote <span class="process-math">\(|A|\text{,}\)</span> then we can assume</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X = \{\eta_\alpha^+:\alpha&lt;\kappa^{+4}\}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\{\eta_\alpha:\alpha&lt;\kappa^{+4}\}\)</span> is an interval of cardinals that we want to think of as a copy of <span class="process-math">\(\kappa^{+4}\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="no-large-intervals-5">
+<div class="para">We will define a continuous strictly increasing function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Phi:\kappa^{+3}\rightarrow \kappa^{+4}
+\end{equation*}
+</div>
+<div class="para">by induction on <span class="process-math">\(\alpha&lt;\kappa^{+3}\text{.}\)</span> We will also have an associated function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Phi^+:\kappa^{+3}\rightarrow X
+\end{equation*}
+</div>
+<div class="para">defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Phi^+(\alpha) = \eta^+_{\Phi(\alpha)}.
+\end{equation*}
+</div>
+</div>
+<div class="para" id="no-large-intervals-6">In order to define the function <span class="process-math">\(\Phi\text{,}\)</span> we let <span class="process-math">\(S\)</span> be the stationary subset <span class="process-math">\(S^{\kappa^{+3}}_{\kappa^+}\)</span> of <span class="process-math">\(\kappa^{+3}\text{,}\)</span> and fix a club-guessing sequence <span class="process-math">\(\langle C_\delta:\delta\in S\rangle\)</span> such that <span class="process-math">\(\mathop{\mathrm{otp}}(C_\delta)=\kappa^+\)</span> for each <span class="process-math">\(\delta\in S\text{.}\)</span> We assume that <span class="process-math">\(C_\delta\)</span> is a set of limit ordinals, as this causes no harm and simplifies notation a little later on.</div>
+<div class="para" id="no-large-intervals-7">We start by setting <span class="process-math">\(\Phi(0)=0\text{,}\)</span> and for limit <span class="process-math">\(\alpha\)</span> we know that <span class="process-math">\(\Phi(\alpha)\)</span> must be the supremum of earlier values.</div>
+<div class="para" id="no-large-intervals-8">Now how do we define <span class="process-math">\(\Phi(\alpha+1)\)</span> if we know <span class="process-math">\(\Phi(\beta)\)</span> for all <span class="process-math">\(\beta\leq\alpha\text{?}\)</span>
+</div>
+<div class="para" id="no-large-intervals-9">For each <span class="process-math">\(\delta\in S\)</span> we will ask a question, which we refer to as “The <span class="process-math">\(C_\delta\)</span> question for <span class="process-math">\(\alpha\)</span>”: we ask</div>
+<div class="para" id="no-large-intervals-10">This is a question that makes sense, as <span class="process-math">\(C_\delta\cap \alpha\)</span> is a subset of <span class="process-math">\(\alpha\text{,}\)</span> and <span class="process-math">\(\Phi^+[C_\delta\cap\alpha]\)</span> is a subset of <span class="process-math">\(X\text{.}\)</span> The answer may be either yes or no. If the answer is no, then this is because the corresponding <span class="process-math">\(\max\mathop{\mathrm{pcf}}\)</span> is larger than <span class="process-math">\(\sup(X)\text{.}\)</span>
+</div>
+<div class="para logical" id="no-large-intervals-11">
+<div class="para">There are only <span class="process-math">\(\kappa^{+3}\)</span> ordinals <span class="process-math">\(\delta\)</span> to consider, so we can choose <span class="process-math">\(\Phi(\alpha+1)&lt;\kappa^{+4}\)</span> so large that for any <span class="process-math">\(\delta\in S\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\max\mathop{\mathrm{pcf}}\left(\Phi^+[C_\delta\cap\alpha]\right)&lt;\sup(B)\Longrightarrow \max\mathop{\mathrm{pcf}}\left(\Phi^+[C_\delta\cap\alpha]\right)&lt;\Phi^+(\alpha+1).
+\end{equation*}
+</div>
+<div class="para">Thus, if the <span class="process-math">\(C_\delta\)</span> question for <span class="process-math">\(\alpha\)</span> has a “yes” answer, then <span class="process-math">\(\Phi(\alpha+1)\)</span> is large enough so that <span class="process-math">\(\Phi^+(\alpha+1)\)</span> is greater than <span class="process-math">\(\max\mathop{\mathrm{pcf}}(\Phi^+[C_\delta\cap\alpha])\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="no-large-intervals-12">This construction defines the function <span class="process-math">\(\Phi:\kappa^{+3}\rightarrow\kappa^{+4}\text{,}\)</span> and we will get our contradiction by looking at the behavior of sets of the form <span class="process-math">\(\Phi^+[C_\delta]\)</span> for <span class="process-math">\(\delta\in S\text{.}\)</span> Our construction is designed so that the following claim must hold:</div>
+<div class="para logical" id="no-large-intervals-13">
+<div class="para">
+<em class="emphasis">Claim 1</em>.  For each <span class="process-math">\(\delta\in S\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\max\mathop{\mathrm{pcf}}\left(\Phi^+[C_\delta]\right)&gt;\sup(X).
+\end{equation*}
+</div>
+</div>
+<div class="para" id="no-large-intervals-14">
+<em class="emphasis">Proof.</em> If this fails for <span class="process-math">\(\delta\text{,}\)</span> then for each <span class="process-math">\(\alpha\)</span> the <span class="process-math">\(C_\delta\)</span> question for <span class="process-math">\(\alpha\)</span> was answered with “yes”. Let us now suppose that <span class="process-math">\(\alpha\)</span> is in <span class="process-math">\(\mathop{\mathrm{nacc}}(C_\delta)\text{,}\)</span> and let <span class="process-math">\(\beta\sup(C_\delta\cap\alpha)\text{.}\)</span> Note that since <span class="process-math">\(C_\delta\)</span> consists of limit ordinals, we know <span class="process-math">\(\beta+2&lt;\alpha\text{.}\)</span>
+</div>
+<div class="para logical" id="no-large-intervals-15">
+<div class="para">The <span class="process-math">\(C_\delta\)</span> question for <span class="process-math">\(\beta+1\)</span> had the answer “yes”, and so our construction guarantees</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\max\mathop{\mathrm{pcf}}\left(\Phi^+[C_\delta\cap\beta+1]\right)&lt;\Phi(\beta+2)&lt;\Phi^+(\alpha).
+\end{equation*}
+</div>
+<div class="para">But <span class="process-math">\(C_\delta\cap\beta+1 = C_\delta\cap\alpha\text{,}\)</span> and so for <span class="process-math">\(\alpha\in \mathop{\mathrm{nacc}}(C_\delta)\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\max\mathop{\mathrm{pcf}}\left(\Phi^+[C_\delta\cap\alpha]\right)&lt;\Phi^+(\alpha).
+\end{equation*}
+</div>
+<div class="para">Now we define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B:=\Phi^+[\mathop{\mathrm{nacc}}(C_\delta)]
+\end{equation*}
+</div>
+<div class="para">and note</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\theta\in B\Longrightarrow \max\mathop{\mathrm{pcf}}(B\cap\theta)&lt;\theta,
+\end{equation*}
+</div>
+<div class="para">which is a contradiction as <span class="process-math">\(|B|=|A|^+\text{.}\)</span> ◻</div>
+</div>
+<div class="para logical" id="no-large-intervals-16">
+<div class="para">To finish the proof, let us define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mu = \sup\mathop{\mathrm{ran}}(\Phi^+)
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(\mu\)</span> is a singular cardinal of cofinality <span class="process-math">\(\kappa^{+3}\text{,}\)</span> and thus there is a closed unbounded <span class="process-math">\(C\subseteq\mu\)</span> of order-type <span class="process-math">\(\kappa^{+3}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\max\mathop{\mathrm{pcf}}(\{\theta^+:\theta\in C\})=\mu^+&lt;\sup(X).
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\{\eta_{\Phi(\alpha)}:\alpha&lt;\kappa^{+3}\}\)</span> enumerates a closed unbounded subset of <span class="process-math">\(\mu\text{,}\)</span> we can find a closed unbounded set <span class="process-math">\(E\subseteq\kappa^{+3}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{\eta_{\Phi(\alpha)}:\alpha\in E\}\subseteq C.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="no-large-intervals-17">
+<div class="para">Now choose <span class="process-math">\(\delta\in S\)</span> such that <span class="process-math">\(C_\delta\subseteq E\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Phi^+[C_\delta]\subseteq\{\theta^+:\theta\in C\}
+\end{equation*}
+</div>
+<div class="para">and therefore we have found a <span class="process-math">\(\delta\in S\)</span> for which</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\max\mathop{\mathrm{pcf}}\left(\Phi^+[C_\delta]\right)\leq\mu^+&lt;\sup(B).
+\end{equation*}
+</div>
+<div class="para">This contradicts the previous claim. ◻</div>
+</div></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="transitive-generators-and-localization.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
