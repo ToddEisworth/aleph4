@@ -1,0 +1,1599 @@
+\documentclass[10pt]{amsart}
+%\addtolength{\hoffset}{-3.25cm}
+%\addtolength{\textwidth}{6.5cm}
+%\addtolength{\voffset}{-2.5cm}
+%\addtolength{\textheight}{5cm}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{todonotes}
+\usepackage{amssymb}
+\usepackage{setspace}
+%\usepackage[colorlinks = true, linkcolor = black, citecolor = black, final]{hyperref}
+%\usepackage{graphicx}
+%\usepackage{tikz-cd}
+%\usetikzlibrary{arrows}
+%\usepackage{multicol}
+%\usepackage{ marvosym }
+%\usepackage{wasysym}
+\usepackage{circledsteps}
+%\usepackage{mathtools}
+\newcommand{\ds}{\displaystyle}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{mainthm}{Main Theorem}
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+\newtheorem*{notation}{Notation}
+\newtheorem{proposition}{Proposition}
+\newtheorem{assumption}[proposition]{Assumption}
+\newtheorem{convention}[proposition]{Convention}
+\newtheorem{observation}[proposition]{Observation}
+\newtheorem{corollary}[proposition]{Corollary}
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{definition}[proposition]{Definition}
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+\newtheorem*{princ}{$(\ast)$}
+\newtheorem*{rem}{Remark}
+\DeclareMathOperator{\ban}{Ban}
+\DeclareMathOperator{\gm}{Gm}
+\DeclareMathOperator{\row}{Row}
+\DeclareMathOperator{\col}{Col}
+\DeclareMathOperator{\drop}{Drop}
+\DeclareMathOperator{\tcf}{tcf}
+\DeclareMathOperator{\wsat}{Wsat}
+\DeclareMathOperator{\stat}{stat}
+\DeclareMathOperator{\ppgimel}{\gimel^{\pp}}
+\DeclareMathOperator{\str}{{\sf Str}}
+\DeclareMathOperator{\indec}{Indec}
+\DeclareMathOperator{\Gap}{Gap}
+\DeclareMathOperator{\ch}{Ch}
+\DeclareMathOperator{\sta}{stat}
+\DeclareMathOperator{\ent}{Ent}
+\DeclareMathOperator{\refl}{Refl}
+\DeclareMathOperator{\bd}{bd}
+\DeclareMathOperator{\fil}{Fill}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\cl}{cl}
+\newcommand{\pcfsig}{\text{\rm pcf}_{\sigma\text{\rm-com}}}
+\newcommand{\pcftau}{\text{\rm pcf}_{\tau\text{\rm-com}}}
+\newcommand{\ppgamma}{\text{\rm pp}_{\Gamma(\theta,\sigma)}}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\wtr}{wTr}
+\DeclareMathOperator{\nacc}{nacc}
+\DeclareMathOperator{\Sk}{Sk}
+\DeclareMathOperator{\fix}{Fix}
+\DeclareMathOperator{\otp}{otp}
+\DeclareMathOperator{\Ch}{Ch}
+\newcommand{\bx}{\bar{x}}
+\DeclareMathOperator{\comp}{Comp}
+\newcommand{\cal}{\mathcal}
+\DeclareMathOperator{\pr}{Pr}
+\DeclareMathOperator{\Fill}{Fill}
+\newcommand{\Y}{X\setminus\{\bx\}}
+\DeclareMathOperator{\nice}{Nice}
+\DeclareMathOperator{\lft}{Left}
+\DeclareMathOperator{\rgt}{Right}
+\DeclareMathOperator{\bad}{Bad}
+\DeclareMathOperator{\ot}{o.t.}
+\DeclareMathOperator{\tp}{Top}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\gen}{Gen}
+\DeclareMathOperator{\cf}{cf}
+\DeclareMathOperator{\genp}{Gen^+}
+\DeclareMathOperator{\PP}{PP}
+\DeclareMathOperator{\fn}{Fn}
+\DeclareMathOperator{\tr}{Tr}
+\DeclareMathOperator{\hp}{h}
+\DeclareMathOperator{\pcf}{pcf}
+\DeclareMathOperator{\ord}{Ord}
+\DeclareMathOperator{\Reg}{{\sf REG}}
+\newcommand{\sk}{\vskip.05in}
+\DeclareMathOperator{\id}{id}
+\newcommand{\px}{P_X}
+\newcommand{\pre}[2]{\vphantom{B}^{#2}#1}
+\newcommand{\tar}{\vec{U}}
+\newcommand{\restr}{\upharpoonright}
+\newcommand{\forces}{\Vdash}
+\DeclareMathOperator{\fu}{FU}
+\DeclareMathOperator{\cov}{cov}
+\newcommand{\oneforces}[1]{\Vdash_{\!  {#1}}}
+\newcommand{\f}{\mathcal{F}}
+\newcommand{\uf}{\mathcal{U}}
+\DeclareMathOperator{\tc}{tc}
+\DeclareMathOperator{\reg}{{\sf Reg}}
+\newcommand{\omom}{[\omega_1]^\omega}
+\DeclareMathOperator{\hull}{Hull}
+\newcommand{\subs}{\subseteq}
+\newcommand{\sups}{\supseteq}
+\DeclareMathOperator{\h}{ht}
+\newcommand{\clo}[1]{\overline{#1}}
+\newcommand{\asubs}{\subseteq^*}
+\newcommand\todoinbl[2][]{\todo[inline, color=blue!5, caption={2do}, #1]{
+\begin{minipage}{\textwidth-4pt}#2\end{minipage}}}
+\newcommand\todoing[2][]{\todo[inline, color=green!5, caption={2do}, #1]{
+\begin{minipage}{\textwidth-4pt}#2\end{minipage}}}
+\newcommand\todoiny[2][]{\todo[inline, color=yellow!5, caption={2do}, #1]{
+\begin{minipage}{\textwidth-4pt}#2\end{minipage}}}
+\newcommand\todoinr[2][]{\todo[inline, color=red!5, caption={2do}, #1]{
+\begin{minipage}{\textwidth-4pt}#2\end{minipage}}}
+\newcommand\todoinrr[2][]{\todo[inline, color=red!25, caption={2do}, #1]{
+\begin{minipage}{\textwidth-4pt}#2\end{minipage}}}
+\newcommand\todoinb[2][]{\todo[inline, color=black!5, caption={2do}, #1]{
+\begin{minipage}{\textwidth-4pt}#2\end{minipage}}}
+\newcommand{\comm}{\todo[color=green!5, inline]}
+\newcommand{\commy}{\todo[color=yellow!5, inline]}
+\newcommand{\commr}{\todo[color=red!5, inline]}
+\newcommand{\pcfgamma}{{\rm pcf}_{\Gamma(\theta,\sigma)}}
+\newcommand{\K}{\mathcal{K}}
+\DeclareMathOperator{\pp}{pp}
+\newcommand{\wless}{\sqsubseteq^w}
+\DeclareMathOperator{\acc}{acc}
+\numberwithin{equation}{section}
+
+\pagestyle{myheadings}
+
+\setlength{\parindent}{0in}
+\setstretch{1.15}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\scshape } \hfill {\scshape \Large Fast Track to $\cf\left([\aleph_\omega]^{\aleph_0},\subseteq\right)<\aleph_{\omega_4}$\hfill {\scshape May 20, 2021 }}
+
+\medskip
+
+\hrule
+
+\bigskip
+
+\bigskip
+
+\section{The basic pcf toolkit}
+
+\subsection{What is $\pcf(A)$ again?}
+We assume that $A$ is a progressive set of regular cardinals, that is $|A|<\min(A)$.  We have defined $\pcf(A)$ to be those cardinals $\lambda$ that appear as the bounding number $\mathfrak{b}(I)$ for some proper ideal $I$ on $\lambda$.  Using the density of exact sequences, we obtained an equivalent characterization in terms of true cofinalities.
+\begin{equation}
+\pcf(A) = \{\tcf(I): I\text{ a proper ideal on $A$ for which $\tcf(I)$ exists}\}.
+\end{equation}
+This can be re-formulated in terms of ultrafilters as well, yielding Shelah's original definition:
+\begin{equation}
+\pcf(A) = \left\{\cf\left(\prod A/ U\right): \text{$U$ an ultrafilter on $A$}\right\}.
+\end{equation}
+We make extensive of use of the fact that $\pcf(A)$ has a maximum value, which we denote $\max\pcf(A)$.
+
+\subsection{What about those ideals and generator things?}
+
+In this part, we do a REALLY quick review of some of the work done earlier in the course.
+
+Let $A$ be a progressive set of regular cardinals, and let $I$ be a proper ideal on $A$.
+
+\begin{enumerate}
+\item  We know that the structure $\prod A/ I$ has a bounding number $\mathfrak{b}(I)$, and that this bounding number is an infinite regular cardinal.  By definition, $\mathfrak{b}(I)$ is the largest cardinal~$\lambda$ such that the reduced product $\prod A/ I$ is $\lambda$-directed.
+
+\item  There is a set $B_I$ in $I^+$ such that
+\begin{itemize}
+\item $\tcf\left(\prod A/ I\restriction B_I\right)=\lambda$, and
+
+\item if $B\subseteq A$ and $\tcf(\left(\prod A/ I\restriction B\right)=\lambda$, then $B\subseteq B_I$ modulo $I$.
+\end{itemize}
+Thus, he collection of $B\in I^+$ for which the product $\prod B/I$ has true cofinality $\lambda$ is non-empty, and has a maximal (modulo $I$) member which we denote $B_I$. This is one of the key uses of our assumption that $|A|<\min(A)$, as we use the density of exact upper bounds to produce $B_I$.
+
+\item  By induction we can build a sequence $\langle B_\lambda[A]:\lambda\in\pcf(A)\rangle$ of subsets of $A$ and an increasing sequence of proper ideals $I_{<\lambda}$ on $A$ such that
+\begin{itemize}
+\item $I_{<\lambda}$ is the ideal generated by $\langle B_\theta[A]:\theta\in\pcf(A)\cap\lambda\rangle$
+
+\sk
+
+\item $\mathfrak{b}(I_{<\lambda}) = \lambda$
+
+\sk
+
+\item $B_\lambda[A]$ is a (unique up to $I_{<\lambda}$-equivalence) maximal set $B$  in $\mathcal{P}(A)/ I_{<\lambda}$ such that $\tcf(\prod B/ I_{<\lambda})=\lambda$
+
+\sk
+\item if $X\in I_{<\lambda}$ then $\max\pcf(X)<\lambda$.
+
+\end{itemize}
+\end{enumerate}
+
+\subsection{Compactness for Generators}
+
+\begin{lemma}
+Suppose $X\subseteq A$.  Then $\max\pcf(X)$ is the least $\lambda$ such that $X\in I_{\leq\lambda}$.
+\end{lemma}
+\begin{proof}
+If $X\in I_{\leq\lambda}$ then $\max\pcf(X)\leq\lambda$, as there is a finite $Y\subseteq\pcf(A)\cap\lambda^+$ such that
+\begin{equation}
+X\subseteq\bigcup_{\theta\in Y} B_\theta[A].
+\end{equation}
+
+Now if $\lambda$ is the {\em least} element of $\pcf(A)$ with $X\in I_{\leq\lambda}$ then we know a couple of things.  First,  $X$ is {\em NOT} in $I_{<\lambda}$.  Second,
+\begin{equation}
+X\setminus B_{\lambda}[A]\in I_{<\lambda}
+\end{equation}
+because $B_{\lambda}[A]$ generates $I_{\leq\lambda}$ over $I_{<\lambda}$.  Putting these facts together tells us
+\begin{equation}
+\lambda = \tcf\left(\prod X/ I_{<\lambda}\restriction X\right)
+\end{equation}
+and therefore $\lambda$ is in $\pcf(X)$.
+\end{proof}
+
+Notice that the above proof shows us the following useful fact:
+\begin{corollary}
+Suppose $X\subseteq A$ and $\lambda=\max\pcf(X)$.  Then
+\begin{equation}
+\max\pcf\left(X\setminus B_\lambda[A]\right)<\lambda.
+\end{equation}
+\end{corollary}
+
+\begin{theorem}[Compactness Property for Generators]\label{thm1}
+If $X\subseteq A$ then there is a finite subset $\{\lambda_i:i<n\}$ of $\pcf(X)$ such that
+\begin{equation}
+X\subseteq B_{\lambda_0}[A]\cup\dots\cup B_{\lambda_{n-1}}[A].
+\end{equation}
+\end{theorem}
+\begin{proof}
+Let $X_0 = X$, and let $\lambda_0 = \max\pcf(X)$.  We define sets $X_i$ and cardinals $\lambda_i$ by the following recipe:
+
+If $X_i=\emptyset$, then the construction halts.  If $X_i$ is non-empty, define
+\begin{equation}
+\lambda_i = \max\pcf(X_i),
+\end{equation}
+and
+\begin{equation}
+X_{i+1} = X_i\setminus B_{\lambda_i}[A].
+\end{equation}
+By the preceding lemma, we know that if $\lambda_{i+1}$ is defined, then $\lambda_{i+1}<\lambda_i$.  Thus, we must reach a stage $n$ where $X_n = \emptyset$, and the conclusion follows.
+\end{proof}
+
+
+\medskip
+
+\noindent{\sf Homework:} If $X\subseteq A$ and $A$ is a progressive set of regular cardinals, then how do the ideals $I_{<\lambda}[A]$ (constructed for $A$) and the corresponding ideals $I_{<\lambda}[X]$ (constructed for $X$) relate?
+
+\medskip
+
+\subsection{The ideals $J_{<\lambda}[A]$}
+\begin{definition}
+Suppose $A$ is a progressive set of regular cardinals. For any infinite cardinal $\lambda$, we define
+\begin{equation}
+J_{<\lambda}[A]: = \{X\subseteq A: \max\pcf(A)<\lambda\}.
+\end{equation}
+\end{definition}
+
+\begin{proposition}
+Let $A$ be a progressive set of regular cardinals, and let $\lambda$ be an infinite cardinal.
+\begin{enumerate}
+\item $J_{<\lambda}[A]$ is an ideal on $A$, and is a proper ideal if and only if $\lambda\leq\max\pcf(A)$.
+\item $J_{<\lambda}\subsetneqq J_{\leq\lambda}$ if and only if $\lambda\in\pcf(A)$.
+\item If $\lambda\in\pcf(A)$ then $J_{<\lambda}[A]= I_{<\lambda}$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+We prove only the third statement, so assume $\lambda\in\pcf(A)$.  Since
+\begin{equation}
+\max\pcf(B_\theta[A])=\theta
+\end{equation}
+for each $\theta\in\pcf(A)$, we know
+\begin{equation}
+I_{<\lambda}\subseteq J_{<\lambda}[A].
+\end{equation}
+
+For the other direction, suppose $\max\pcf(X)<\lambda$.  Apply the Compactness Property for Generators and
+find $\lambda_0>\dots>\lambda_{n-1}$ in $\pcf(X)$ such that
+\begin{equation}
+X\subseteq \bigcup_{i<n}B_{\lambda_i}[A].
+\end{equation}
+Since each $\lambda_i$ is less than $\lambda$, we know $X\in I_{<\lambda}$.
+\end{proof}
+
+
+\subsection{Cofinality sequences}
+
+
+
+For $\lambda\in\pcf(A)$,  fix a sequence $\bar{f}^\lambda=\langle f^\lambda_\alpha:\alpha<\lambda\rangle$ of functions in $\prod A$ such that
+\begin{itemize}
+\item $\bar{f}^\lambda$ is strictly increasing modulo $J_{<\lambda}[A]$,
+
+\sk
+
+\item $\bar{f}^\lambda$ is unbounded in $\prod A$ modulo $J_{<\lambda}[A]$, and
+
+\sk
+
+\item $\bar{f}^\lambda$ is cofinal in $\prod A$ modulo $J_{<\lambda}\restriction B_\lambda$.
+\end{itemize}
+
+We call $\bar{f}^\lambda$ a cofinality sequence for $\lambda$, and the entire collection $\langle \bar{f}^\lambda:\lambda\in\pcf(A)\rangle$ will be referred to as a {\em cofinality array} for $\pcf(A)$.
+
+For now, we will use these sequences in the following way:
+
+\begin{lemma}
+\label{lem4}
+Suppose $X\subseteq A$, and let $\lambda = \max\pcf(X)$.  Given a function $g\in\prod A$, there is an $\alpha<\lambda$ such that
+\begin{equation}
+\{a\in X: f^\lambda_\alpha(a)\leq g(a)\}\in J_{<\lambda}[A].
+\end{equation}
+\end{lemma}
+In English, if $\lambda = \max\pcf(X)$ then any function in $\prod X$ can be dominated by some $f^\lambda_\alpha$, except for a set of exceptions that has smaller $\max\pcf$.
+
+
+\begin{proof}
+Since $\lambda = \max\pcf(X)$, we know that $X$ is a subset of $B_\lambda[A]$ modulo $J_{<\lambda}[A]$, as $B_\lambda[A]$ generates $J_{\leq\lambda}[A]$ over $J_{<\lambda}[A]$.  Thus,
+\begin{equation}
+X\setminus B_{\lambda}[A]\in J_{<\lambda}[A].
+\end{equation}
+Given $g\in\prod A$, choose $\alpha<\lambda$ such that
+\begin{equation}
+g<f^\lambda_\alpha\mod J_{<\lambda}[A]\restriction B_\lambda,
+\end{equation}
+so for $J_{<\lambda}[A]$-almost all $a\in B_\lambda[A]$, we have $g(a)< f^\lambda_\alpha(a)$.
+Then for this choice of $\alpha$,
+\begin{equation}
+\{a\in X: f^\lambda_\alpha(a)\leq g(a)\}\in J_{<\lambda}[A].
+\end{equation}
+\end{proof}
+
+
+\subsection{What do we mean by ``pcf structure''?}
+
+Given a progressive set of regular cardinals $A$, we will often speak about the {\em $\pcf$-structure of $A$}, and by this we mean  the collection of ideals $J_{<\lambda}[A]$, the sequences of generators $B_\lambda[A]$ for $\lambda\in\pcf(A)$, and some choice of cofinality sequences $\bar{f}^\lambda$ for $\lambda$ in $\pcf(A)$.
+
+Note that the ideals are unique and the generator $B_\lambda[A]$ is unique modulo the ideal $J_{<\lambda}[A]$.  The sequence of ideals is also completely determined by the sequence of generators $\langle B_\lambda[A]:\lambda\in\pcf(A)\rangle$, as $J_{<\lambda}[A]$ is just the ideal on $A$ generated by the family $\{B_\theta[A]:\theta\in\pcf(A)\cap\lambda\}$.
+
+Note that by the density of exact upper bounds, we can assume that $\bar{f}^\lambda$ has an exact upper bound $f^*_\lambda$ mod $J_{<\lambda}[A]$ such that $f_\lambda^*(a)\leq a$ for all $a\in A$.  If this is the case, then we can recover a generator $B^*_\lambda$ from $\bar{f}^\lambda$ by defining
+\begin{equation}
+B^*_\lambda:=\{a\in A: f^*_\lambda(a) = a\}.
+\end{equation}
+We will pursue this in more detail a little later on.
+
+
+\subsection{Application: the cofinality of $\prod A$}
+
+
+\begin{theorem}
+\label{thm2}
+Suppose $A$ is a progressive set of regular cardinals.  Then
+\begin{equation}
+\cf\left(\prod A, <\right) = \max\pcf(A).
+\end{equation}
+\end{theorem}
+\begin{proof}
+Let $\langle B_\lambda[A]:\lambda\in\pcf(A)\rangle$ and $\langle\bar{f}^\lambda:\lambda\in\pcf(A)\rangle$ generate the pcf structure of $A$.
+
+Given $g\in\prod A$ we claim there is a finite subset $\{\lambda_i:i<n\}$ of $\pcf(A)$ and ordinals $\alpha_i<\lambda_i$ for $i<n$ such that
+\begin{equation}
+g<\max\{f^{\lambda_i}_{\alpha_i}:i<n\}
+\end{equation}
+in $\prod A$.  Clearly this is sufficient, as there are at most $\max\pcf(A)$ possibilities for the functions as on the right hand side.
+
+We work by induction, similar to how we proved Theorem~\ref{thm1}, except this time we use Lemma~\ref{lem4} to fuel the argument. The idea is as follows: let $\lambda=\max\pcf(A)$, and choose $\alpha<\lambda$ such that $g<_{J_{<\lambda}[A]} f^\lambda_\alpha$.  This means $f^\lambda_\alpha$ does what we want, except for a set of exceptions that is in $J_{<\lambda}[A]$, that is,
+\begin{equation}
+\max\pcf\{a\in A: f^\lambda_\alpha(a)\leq g(a)\}<\lambda.
+\end{equation}
+If this set is non-empty, then we continue by applying Lemma~\ref{lem4}.
+
+In more precise language, we will implement a construction that attempts to define sets $A_i$, cardinals $\lambda_i$, and ordinals $\alpha_i<\lambda_i$ for each $i<\omega$.
+
+We begin by setting $A_0 = A$ and $\lambda_0=\max\pcf(A_0)$. We let $\alpha_0<\lambda_0$ be the least ordinal such that
+\begin{equation}
+\{a\in A_0 : f^{\lambda_0}_{\alpha_0}\leq g(a)\}\in J_{<_{\lambda_0}}.
+\end{equation}
+
+Given $A_i$, if $A_i$ is non-empty then set $\lambda_i = \max\pcf(A_i)$ and let $\alpha_i<\lambda_i$
+be least such that
+\begin{equation}
+\{a\in A_i: f^{\lambda_i}_{\alpha_i}(a)\leq g(a)\}\in J_{<_{\lambda_i}}.
+\end{equation}
+Such an $\alpha_i$ exists by way of Lemma~\ref{lem4}.  Finally, define
+\begin{equation}
+A_{i+1} = \{a\in A_i: f^{\lambda_i}_{\alpha_i}(a)\leq g(a)\}.
+\end{equation}
+
+Note that our construction guarantees that if $A_{i+1}$ is non-empty, then $\lambda_{i+1}$ is strictly less than $\lambda_i$.  Thus, there must be some least $n$ where $A_n$ is empty.  This means that
+\begin{equation}
+(\forall a\in A)(\exists i< n)\left[ g(a)<f^{\lambda_i}_{\alpha_i}(a)\right],
+\end{equation}
+and so we are done.
+\end{proof}
+
+
+
+\section{Characteristic Functions and $\cf\left([\aleph_\omega]^{\aleph_0},\subseteq\right)$}
+
+
+Where are we headed now? Our next stop is Shelah's theorem that
+\begin{equation}
+\max\pcf\left(\{\aleph_n:n<\omega\}\right) = \cf\left([\aleph_\omega]^{\aleph_0},\subseteq\right),
+\end{equation}
+a theorem that gets at the heart of the connection between traditional cardinal arithmetic and pcf theory.
+
+In this section, we modify our usual assumptions about $A$ and its associated pcf structure by demanding
+\begin{equation}
+|A|^+<\min(A)
+\end{equation}
+(this is innocuous as far as pcf theory is concerned), and we assume $\kappa$ is a regular cardinal such that
+\begin{equation}
+|A|<\kappa=\cf\kappa<\min(A).
+\end{equation}
+Our assumption on $|A|$ is so that such a $\kappa$ exists.
+
+For the remainder this section, we will let $J_{<\lambda}[A]$, $B_\lambda[A]$ and $\langle f^\lambda_\alpha:\alpha<\lambda\rangle$ be as in the preceding section, for each $\lambda\in\pcf(A)$.
+
+
+\subsection{Internally Approachable Models}
+
+Our main tool in this section and the next is internally approachable models, which we have seen already in class during our investigation of $I[\lambda]$. Recall:
+
+\begin{definition}
+We say that $N$ (an elementary submodel of some expansion of $\langle H(\chi),\in, <_\chi\rangle$ for some sufficiently large
+    regular cardinal $\chi$) is $\kappa$-internally approachable if $N$ is the union of a sequence $\langle N_i:i<\kappa\rangle$
+\begin{itemize}
+\item $\langle N_i:i<\kappa\rangle$ is a continuous $\in$-sequence of elementary submodels of $H(\chi)$
+
+
+
+\item $\langle N_j:j\leq i\rangle\in N_{i+1}$
+
+
+\item $|N_i|<\kappa$ and $N_i\cap\kappa$ is an initial segment of $\kappa$.
+\end{itemize}
+\end{definition}
+
+We are going to want to assume that $A$ (together with its associated pcf structure) is an element of $N_0$.
+
+
+\subsection{Characteristic functions of models} One of the reasons behind the usefulness of requiring $|A|<\kappa<\min(A)$ is the observation that $A$ is not only an element of $N_0$,
+but it is a subset of $N_0$ as well because we assume $N_0\cap\kappa$ is an initial segment of $\kappa$.
+Furthermore, for any $a\in A$ we know
+\begin{equation}
+\sup(N\cap a)<a,
+\end{equation}
+and so $N$ can be used to define a natural function in $\prod A$, the {\em characteristic function of $N$}:
+
+\begin{definition}
+The characteristic function $\chi_N$ of $N$ in $\prod A$ is defined by
+\begin{equation}
+\chi_N(a) = \sup(N\cap a)
+\end{equation}
+\end{definition}
+We will also need to consider the characteristic functions of models $N_i$ for $i<\kappa$.  These functions are defined in the
+obvious way, and note that for each $i<\kappa$, the sequence $\langle \chi_{N_j}:j\leq i\rangle$ is in the model $N_{i+1}$ because the characteristic functions are definable from their associated model.
+
+The sequence $\langle \chi_{N_i}:i<\kappa\rangle$ is increasing and continuous, with supremum $\chi_N$.  Much of the work of this section will be to generalize Theorem~\ref{thm2} and show that there is a set $F\subseteq\prod A$ of cardinality $\max\pcf(A)$ such that $\chi_N\in F$ for any  $\kappa$-internally approachable $N$ containing $A$.  Even though these models might be quite arbitrary, there are relatively few possibilities for their characteristic functions.
+
+
+
+\subsection{Building generators from cofinality sequences}
+
+\begin{proposition}
+\label{prop:CharGenProp} Suppose $\lambda\in\pcf(A)\cap N$, and let $\delta=\sup(N\cap\lambda)$. If $f\in\prod A$ is an upper bound for
+$\langle f^\lambda_\alpha:\alpha<\delta\rangle$ mod $J_{<\lambda}[A]$, then
+\begin{equation}
+B_\lambda\subseteq_{J_{<\lambda}[A]}\{a\in A: \chi_N(a)\leq f(a)\}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+If this fails, then
+\begin{equation}
+\{a\in B_\lambda: f(a)<\sup(N\cap a)\}\notin J_{<\lambda}[A].
+\end{equation}
+Since $|A|$ is less than $\kappa$, we can find a single $i<\kappa$ such that
+\begin{equation}
+f(a)<\sup(N\cap a)\Longleftrightarrow f(a)<\sup(N_i\cap a),
+\end{equation}
+and so
+\begin{equation}
+\label{eqn65.2}
+\{a\in B_\lambda: f(a)<\chi_{N_i}(a)\}\notin J_{<\lambda}[A].
+\end{equation}
+But the model $N$ can see an $\alpha<\lambda$ such that
+\begin{equation}
+\label{eqn65.3}
+\chi_{N_i}\restriction B_\lambda <_{J_{<\lambda}[A]} f^\lambda_\alpha\restriction B_\lambda.
+\end{equation}
+In particular, there is such an $\alpha\in N\cap\lambda$, and putting (\ref{eqn65.2}) and (\ref{eqn65.3}) together tells us
+\begin{equation}
+\{a\in B_\lambda: f(a)< f^\lambda_\alpha(a)\}\notin J_{<\lambda}[A].
+\end{equation}
+But this contradicts our assumption that $f$ bounds $\bar{f}^\lambda\restriction\delta$ mod $J_{<\lambda}[A]$.
+\end{proof}
+
+This tells us that characteristic function $\chi_N$ is a least upper bound for $\langle f^\lambda_\alpha:\alpha<\sup(N\cap\lambda)\rangle$
+modulo the ideal $J_{<\lambda}[A]\restriction B_\lambda$. But more is true -- it is actually an exact upper bound.
+
+\begin{corollary}
+Suppose $\lambda\in N\cap\pcf(A)$ and $\delta = \sup(N\cap\lambda)$.  Then $\chi_N$ is an exact upper bound for $\langle f^\lambda_\alpha:\alpha<\delta\rangle$
+modulo the ideal $J_{<\lambda}[A]\restriction B_\lambda$, and $\delta$ is a flat point for the sequence $\bar{f}^\lambda$ modulo
+the ideal $J_{<\lambda}[A]\restriction B_\lambda$.
+\end{corollary}
+\begin{proof}
+If $g$ is below $\chi_N$ modulo $J_{<\lambda}[A]\restriction B_\lambda$, then since $|A|<\kappa$ there is a single $i<\kappa$
+such that $\chi_{N_i}$ bounds $g$ mod $J_{<\lambda}[A]\restriction B_\lambda$.  But just as in the previous proof, $N$ can see an ordinal
+$\alpha<\lambda$ with
+\begin{equation}
+\chi_{N_i}\restriction B_\lambda<_{J_{<\lambda}[A]} f^\lambda_\alpha\restriction B_\lambda,
+\end{equation}
+so
+\begin{equation}
+(\exists \alpha<\delta)\left[ g < f^\lambda_\alpha\mod J_{<\lambda}[A]\restriction B_\lambda\right].
+\end{equation}
+To see that $\delta$ is a flat point, we just note that
+\begin{equation}
+\cf(\sup(N\cap a)) = \kappa
+\end{equation}
+for each $a\in A$, witnessed by the strictly increasing sequence $\langle \chi_{N_i}(a):i<\kappa\rangle$.
+\end{proof}
+
+We close this subsection with some more  corollaries of Proposition~\ref{prop:CharGenProp}.
+
+
+\begin{corollary}
+Suppose $\lambda\in N\cap\pcf(A)$.  If $\lambda<\max\pcf(A)$  and there is a $g\in N\cap\prod A$ such that
+\begin{equation}
+f\leq_{J_{\leq\lambda}[A]}g,
+\end{equation}
+then
+\begin{equation}
+\{a\in A: \chi_N(a)\leq f(a)\}\text{ is a generator for }\lambda.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Because of Proposition~\ref{prop:CharGenProp}, we need only show that the set in question is in $J_{\leq\lambda}[A]$. Notice that
+$g(a)<\chi_N(a)$ for all $a\in A$, so
+\begin{equation}
+\{a\in A: \chi_N(a)\leq f(a)\}\subseteq\{a\in A: g(a)<f(a)\},
+\end{equation}
+and this latter set is in $J_{\leq\lambda}[A]$ by assumption.
+\end{proof}
+
+
+Finally, we have the following:
+
+\begin{corollary}
+If $\lambda\in N\cap\pcf(A)$ and $\sup(N\cap\lambda)\leq\gamma<\lambda$, then
+\begin{equation}
+\{a\in A: \chi_N(a)\leq f^\lambda_\gamma(a)\}\text{ is a generator for }\lambda.
+\end{equation}
+\end{corollary}
+\begin{proof}
+If $\lambda = \max\pcf(A)$, then this follows immediate from Proposition~\ref{prop:CharGenProp}. If $\lambda<\max\pcf(A)$ then
+$\bar{f}^\lambda$ has an upper bound $g$ modulo $J_{\leq\lambda}[A]$ because $\prod A/ J_{\leq\lambda}[A]$ is $\lambda^+$-directed.
+Now the previous corollary applies and we have the result.
+\end{proof}
+
+
+\subsection{Minimal club continuity}
+
+
+\begin{definition}
+Let $\bar{f}=\langle f^\lambda_\alpha:\alpha<\lambda\rangle$ be a cofinality sequence for $\lambda$ in $\pcf(A)$, and let $\delta<\lambda$
+be a limit ordinal of uncountable cofinality.  We say that the sequence $\bar{f}$ is {\em minimally club continuous at $\delta$}
+if for each $a\in A$,
+\begin{equation}
+\label{eqn:65.1}
+f^\lambda_\delta(a) = \min\{\sup\{f^\lambda_\alpha(a): \alpha\in C\}: C\text{ closed unbounded in }\delta\}.
+\end{equation}
+We say that $\bar{f}$ is {\em minimally club continuous at cofinality $\kappa$} if the above holds for all $\delta<\lambda$
+ of cofinality $\kappa$.
+\end{definition}
+
+
+Let us check that this definition is reasonable.  Given $\delta<\lambda$ of cofinality $\kappa$ and $a\in A$, the right-hand side
+of (\ref{eqn:65.1}) makes sense and so this equation defines a function in $\prod A$. If we let $C(a)$ be a closed unbounded
+subset of $\delta$ for which the minimizing value is obtained, then for any closed unbounded $C\subseteq C(a)$, we have
+\begin{equation}
+f^\lambda_\delta(a) = \sup\{f^\lambda_\alpha(a):\alpha\in C\}.
+\end{equation}
+Since $|A|<\kappa$, we can let $C$ be the intersection of the sets $C(a)$ for $a\in A$, and this gives us a single closed
+unbounded $C\subseteq\delta$ with the property that for {\em any} closed unbounded $D\subseteq C$,
+\begin{equation}
+(\forall a\in A)\left[f^\lambda_\delta(a) = \sup\{f^\lambda_\alpha(a):\alpha\in D\}\right].
+\end{equation}
+In particular, for each $\alpha\in C$ we will have $f_\alpha^\lambda\leq f^\lambda_\delta$, and so by (\ref{eqn:65.1}) we know
+that for any closed unbounded subset $D$ of $C$,
+\begin{equation}
+f^\lambda_\delta = \sup\{f^\lambda_\alpha:\alpha\in D\}.
+\end{equation}
+In particulary, $f^\lambda_\delta$ is an upper bound for $\bar{f}^\lambda\restriction\delta$ modulo $J_{<\lambda}[A]$.
+
+Returning to our usual context, suppose that $\bar{f}^\lambda$ is minimally club continuous at cofinality $\kappa$,
+ and let $N$ be a $\kappa$-internally approachable model containing $\bar{f}_\lambda$. What occurs at $\delta = \sup(N\cap\lambda)$?
+
+
+The function $f^\lambda_\delta$ will not be in $N$, and neither is the minimizing club $C\subseteq\delta$.  We do know, however, that $C$ is a
+subset of $N$ and this means that $f^\lambda_\alpha$ is an element of $N$ for every $\alpha\in C$. But then the range of $f^\lambda_\alpha$
+will be a subset of $N$ (as $A\subseteq N$), so for each $a\in A$,
+\begin{equation}
+f^\lambda_\delta(a) = \sup\{f^\lambda_\alpha(a):a\in C\}\leq\sup(N\cap a) = \chi_N(a),
+\end{equation}
+and so
+\begin{equation}
+\label{eqn:65.8}
+f^\lambda_{\sup(N\cap\lambda)}\leq \chi_N.
+\end{equation}
+But we have already shown that $\chi_N\restriction B_\lambda$ is an exact upper bound for
+ $\langle f_\alpha^\lambda\restriction B_\lambda:\alpha<\delta\rangle$ modulo $J_{<\lambda}[A]$, so it must be the case that
+ \begin{equation}
+ \chi_N\restriction B_\lambda =_{J_{<\lambda}[A]} f^\lambda_\delta\restriction B_\lambda.
+ \end{equation}
+In the special case where $\lambda$ is $\max\pcf(A)$, we can assume $B_\lambda = A$, and we then have
+\begin{equation}
+\chi_N =_{J_{<\lambda}[A]}f^\lambda_{\sup(N\cap\lambda)}.
+\end{equation}
+So reflecting back on our goal of trying to capture the characteristic functions of $\kappa$-internally approachable models, we have
+shown that if $\lambda = \max\pcf(A)$ and $\bar{f}^\lambda$ is minimally club continuous at cofinality $\kappa$, then $\chi_N$ will agree
+with $f^\lambda_{\sup(N\cap\lambda)}$ except perhaps on a set in $J_{<\lambda}[A]$.   Our next move is to show that this set of exceptions,
+even though potentially not in $N$, can still be covered by a set in $N\cap J_{<\lambda}[A]$.
+
+
+\subsection{Internal reflections}
+
+Taking stock of our story so far, we let $\bar{f}^\lambda$ and $N$ be as usual, and define
+\begin{equation}
+B^*_\lambda:=\{a\in A:  \sup(N\cap a)\leq f^\lambda_{\sup(N\cap\lambda)}(a)\}.
+\end{equation}
+We know $B^*_\lambda$ is a generator for $\lambda$, but since it is defined using objects that are external to $N$, we have no reason
+to believe that it will be in the model.  In this subsection we will show that $B^*_\lambda$ can be ``reflected'' inside the model $N$, and the
+existence of such reflections will be used as fuel for arguments by induction on $\pcf(A)$.
+
+Given $i<j<\kappa$, let us define
+\begin{equation}
+B^{i,j}_\lambda:=\{a\in A\cap(\lambda+1): \sup(N_i\cap a)< f^\lambda_{\sup(N_j\cap\lambda)}(a)\}
+\end{equation}
+The set $B^{i,j}_\lambda$ can be defined in the model $N_{j+1}$, so each $B^{i,j}_\lambda$ is in $N$.  We will show that for many
+choices of $i$ and $j$, this set will also be a generator for $\lambda$ that is a subset of $B^*_\lambda$, and this is how we
+produce our reflections of $B^*_\lambda$ into $N$.
+
+\begin{theorem}
+Under our usual assumptions, suppose $\lambda$ is in $N\cap\pcf(A)$, while $\bar{f}^\lambda\in N$ is minimally club continuous at
+ cofinality~$\kappa$. Then there is a closed unbounded $E_\lambda\subseteq\kappa$ such that for each $i<j$ in $E_\lambda$ the set
+\begin{equation}
+B^{i,j}_\lambda:=\{a\in A: \sup(N_i\cap a)< f^\lambda_{\sup(N_j\cap\lambda)}(a)\}
+\end{equation}
+is a generator for $\lambda$, and
+\begin{equation}
+B^{i,j}_\lambda\subseteq\{a\in A: \sup(N\cap a)\leq f^\lambda_{\sup(N\cap\lambda)}(a)\}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Before getting in to the proof, let us recall that $B_\lambda$ is our ``ambient'' generator for $\lambda$ that is an element of $N$,
+ in contrast to $B^*_\lambda$, which is the generator we built by comparing $f^\lambda_{\sup(N\cap\lambda)}$ with $\chi_N$.
+ Both of these will make an appearance in the argument.
+
+Let $C$ be a closed unbounded subset of $\kappa$ witnessing that $\bar{f}^\lambda$ is minimally club continuous at $N\cap\lambda$,
+so
+\begin{equation}
+\label{eqn:65.6}
+(\forall a\in A)\left[f^\lambda_{\sup(N\cap\lambda)}(a) = \sup\{f^\lambda_\alpha(a):\alpha\in C\}\right],
+\end{equation}
+and this remains true for any closed unbounded subset of $C$.
+
+Next, since  $|A|<\kappa$, we know for all sufficiently large $\alpha<\kappa$ that
+\begin{equation}
+\label{eqn:65.4}
+f^\lambda_{\sup(N\cap\lambda)}(a)< \sup(N\cap a) \Longleftrightarrow f^\lambda_{\sup(N\cap\lambda)}(a)<\sup(N_\alpha\cap a).
+\end{equation}
+
+
+Finally, given  $\beta<\kappa$, there is an ordinal $h(\beta)<\kappa$ such that
+\begin{equation}
+\label{eqn:65.5}
+h(\beta)\leq\gamma<\kappa\Longrightarrow
+\chi_{N_\beta}\restriction B_\lambda<_{J_{<\lambda}[A]} f^\lambda_\gamma\restriction B_\lambda
+\end{equation}
+because $\bar{f}^\lambda$ is a cofinality sequence for $\lambda$.
+
+We let $E_\lambda$ be the closed unbounded subset of $\kappa$ defined by putting $\alpha$ into $E_\lambda$ if
+\begin{itemize}
+\item $\alpha$ is large enough so that (\ref{eqn:65.4}) holds,
+\item $\alpha$ is closed under the function $h$ from (\ref{eqn:65.5}), and
+\item $\sup(N_\alpha\cap\lambda)\in C$, the closed unbounded set from (\ref{eqn:65.6}).
+\end{itemize}
+Note that $E_\lambda$ is closed and unbounded in $\kappa$ because the set $\{\sup(N_\alpha\cap\lambda):\alpha<\kappa\}$ is too,
+ so we now show that $E_\lambda$ has the other required properties.
+
+
+Given $i<j<\kappa$ in $E_\lambda$, suppose $a\in B^{i,j}_\lambda$.  By definition, this means
+\begin{equation}
+\sup(N_i\cap a)< f^\lambda_{\sup(N_j\cap\lambda)}(a).
+\end{equation}
+But $\sup(N_j\cap\lambda)$ is in $C$, so by (\ref{eqn:65.6}),
+\begin{equation}
+f^\lambda_{\sup(N_j\cap\lambda)}\leq f^\lambda_{\sup(N\cap\lambda)},
+\end{equation}
+and therefore
+\begin{equation}
+\sup(N_i\cap a)< f^\lambda_{\sup(N\cap\lambda)}.
+\end{equation}
+But now $i$ is large enough so that by (\ref{eqn:65.4}), we are allowed to conclude
+\begin{equation}
+f^\lambda_{\sup(N\cap\lambda)}(a) = \chi_N(a)
+\end{equation}
+and hence $a\in B^*_\lambda$.  Thus, $B^{i, j}_\lambda\subseteq B^*_\lambda$.
+
+To see that $B^{i, j}_\lambda$ is a generator, we will need to use the fact that $h(i)<j$ and $j\leq\sup(N_j\cap\lambda)$.  This means
+\begin{equation}
+\chi_{N_i}\restriction B_\lambda <_{J_{<\lambda}[A]} f^\lambda_{\sup(N_j\cap\lambda)}\restriction B_\lambda,
+\end{equation}
+and so for $J_{<\lambda}[A]$-almost every $a\in B_\lambda$, we have
+\begin{equation}
+\sup(N_i\cap a)< f^\lambda_{\sup(N_j\cap\lambda)}(a).
+\end{equation}
+In other words,
+\begin{equation}
+B_\lambda\subseteq_{J_{<\lambda}[A]}B^{i, j}_\lambda,
+\end{equation}
+and we are done.
+\end{proof}
+
+This can be improved by using diagonal intersections to achieve a single closed unbounded $E\subseteq\kappa$ that works
+for many $\lambda\in N\cap\pcf(A)$ simultaneously.
+
+\begin{corollary}
+\label{cor:ReflGenCor}
+Suppose $\langle \bar{f}^\lambda:\lambda\in\pcf(A)\rangle\in N_0$ is such that each $\bar{f}^\lambda$ is minimally club continuous at
+cofinality~$\kappa$. There is a closed unbounded $E\subseteq\kappa$ such that for any $i<j<k$ in $E$ and $\lambda\in N_i\cap\pcf(A)$,
+the set
+\begin{equation}
+B^{j, k}_\lambda = \{a\in A: \sup(N_j\cap a)<f^\lambda_{\sup(N_k\cap\lambda)}(a)\}
+\end{equation}
+is a generator for $\lambda$, and
+\begin{equation}
+B^{j,k}_\lambda\subseteq\left\{a\in A:\sup(N\cap a)= f^\lambda_{\sup(N\cap\lambda)}(a)\right\}
+\end{equation}
+\end{corollary}
+\begin{proof}
+For $\alpha<\kappa$, we define
+\begin{equation}
+E_\alpha:= \bigcap\{E_\lambda:\lambda\in N_\alpha\cap\pcf(A)\}.
+\end{equation}
+This gives us a club subset of $\kappa$ that ``works'' for each $\lambda$ in $N_\alpha\cap\pcf(A)$.  Now let $E$
+be the diagonal intersection of the $E_\alpha$ for $\alpha<\kappa$.  If $i<j<k$ in $E$ and $\lambda\in N_i\cap\pcf(A)$, then
+$j$ and $k$ are in $E_\lambda$, and we have what we need.
+\end{proof}
+
+The strength of the preceding corollary is in the fact that for $i<j<k$ in $E$, we have
+\begin{equation}
+\langle B^{j,k}_\lambda:\lambda\in N_i\cap\pcf(A)\rangle\in N_{j+1},
+\end{equation}
+so that $N_{j+1}$ contains a sequence of generators for all $\lambda\in N_i\cap\pcf(A)$ that are each an internal reflection
+of the corresponding external generator $B_\lambda^*$.
+
+
+
+\subsection{Characterizing characteristic functions}
+
+We won't need the full power of what we obtained in the previous subsection right now. What
+we actually use is the following:   if $\lambda\in\pcf(A)\cap N$, there
+is a set $B'_\lambda$ such that
+\begin{itemize}
+\item $B'_\lambda$ is a generator for $\lambda$,
+
+\item $B'_\lambda$ is in $N$, and
+
+\item $f^\lambda_{\sup(N\cap\lambda)}\restriction B_\lambda = \chi_N\restriction B_\lambda$.
+\end{itemize}
+The model $N$ sees that the first two of these statements are true, but the third statement is something external that someone inside
+of $N$ will not be able to see.   What makes the argument work is that if $\lambda=\max\pcf(A)$, then $\max\pcf(A\setminus B'_\lambda)$
+will be less than $\lambda$ because $B'_\lambda$ is a generator, and $A\setminus B'_\lambda$ will still be in $N$ because both
+$A$ and $B'_\lambda$ are.   The exact definition of $B'_\lambda$ won't matter: we can just let $i<j<k$ be consecutive members of $E$
+where $i$ is least such that $\lambda\in N_i\cap\pcf(A)$, and set
+\begin{equation}
+B'_\lambda = B^{j, k}_\lambda \in N_{k+1}\subseteq N.
+\end{equation}
+
+\begin{theorem}
+Suppose $N$ is a $\kappa$-internally approachable model containing $A$, and $\bar{F}=\langle \bar{f}^\lambda:\lambda\in\pcf(A)\rangle\in N$
+is such that each $\bar{f}^\lambda$ is minimally club continuous at cofinality~$\kappa$. Then
+there are $\lambda_0>\dots>\lambda_n$ in $\pcf(A)$ with $\lambda_0=\max\pcf(A)$ such that
+\begin{equation}
+A = \bigcup_{i\leq n}B'_{\lambda_i}
+\end{equation}
+and
+\begin{equation}
+\chi_N = \max\left\{f^{\lambda_0}_{\sup(N\cap\lambda_0)},\dots, f^{\lambda_n}_{\sup(N\cap\lambda_n)}\right\}
+\end{equation}
+\end{theorem}
+\begin{proof}
+The proof consists of showing that $A$ can be covered by finitely many of our reflected generators, and we will do this through
+a recursion that must terminate after finitely many steps.
+We start by setting
+$\lambda_0$ equal to $\max\pcf(A)$, and $A_0 = A$.  At stage $n$, we will be handed a subset $A_n$ of $A$ that is in $N$
+and cardinals $\lambda_i$ for $i\leq n$.  We now ask the question
+\begin{equation}
+\label{eqn:65.7}
+\text{Is }A_n\setminus B'_{\lambda_n}=\emptyset?
+\end{equation}
+If it is, then our construction terminates. If not, we define
+\begin{equation}
+A_{n+1} = A_n\setminus B'_{\lambda_n} = A\setminus\bigcup_{i\leq n}B'_{\lambda_i},
+\end{equation}
+and
+\begin{equation}
+\lambda_{n+1} = \max\pcf(A_{n+1}).
+\end{equation}
+
+Notice that each $A_i$ is in $N$ because the generators $B'_{\lambda_j}$ for $j<i$ are available in $N$, so our construction can
+continue if needed.  If $A_{n+1}$ is defined,
+then
+\begin{equation}
+\begin{aligned}
+\lambda_{n+1} &= \max\pcf(A_{n+1})\\
+&=\max\pcf(A_n\setminus B'_{\max\pcf(A_n)})\\
+&<\max\pcf(A_n)=\lambda_n,
+\end{aligned}
+\end{equation}
+so we cannot continue for infinitely many steps, and we must arrive eventually at a stage where the answer to (\ref{eqn:65.7}) is ``yes''.
+At that point, we know
+\begin{equation}
+A = \bigcup_{i\leq n}B'_{\lambda_i}.
+\end{equation}
+Now for each $i\leq n$, we know
+\begin{equation}
+f^{\lambda_i}_{\sup(N\cap\lambda_i)}\restriction B_{\lambda_i}' = \chi_N\restriction B'_{\lambda_i}
+\end{equation}
+by properties of $B'_{\lambda_i}$, and
+\begin{equation}
+f^{\lambda_i}_{\sup(N\cap\lambda_i)}\leq \chi_N
+\end{equation}
+by (\ref{eqn:65.8}), so the result follows.
+\end{proof}
+
+We state the following corollary with our assumptions spelled out explicitly.
+
+\begin{corollary}
+\label{cor:CaptureChar}
+ Suppose $A$ is a progressive set of regular cardinals with $|A|^+<\min(A)$, and $\kappa$ is a regular cardinal
+such that $|A|<\kappa<\min(A)$. Then there is a set $F\subseteq\prod A$ of cardinality $\max\pcf(A)$ such that whenever $N$ is a
+$\kappa$-internally approachable model with $A\in N$, the characteristic function of $N$ is in $F$.
+\end{corollary}
+
+This turns out to be a key ingredient in connecting pcf theory back to more traditional cardinal arithmetic.  In particular,
+we want to show that in some situations, the characteristic function of $N$ determines much of the structure of $N\cap\ord$.
+
+\subsection{The cofinality of $([\aleph_\omega]^{\aleph_0},\subseteq)$}
+
+We will end this section with proving that the cofinality of the structure $\left([\aleph_\omega]^{\aleph_0},\subseteq\right)$
+is $\max\pcf(\{\aleph_n:n<\omega\})$.
+
+
+
+\begin{proposition}
+\label{prop:ModEquProp} Suppose $M$ and $N$ are $\aleph_n$-internally approachable models for some non-zero $n<\omega$, and for
+all $k<\omega$
+\begin{equation}
+\sup(N\cap\aleph_k) = \sup(M\cap\aleph_k).
+\end{equation}
+Then
+\begin{equation}
+M\cap\aleph_\omega = N\cap\aleph_\omega.
+\end{equation}
+\end{proposition}
+\begin{proof}
+We show by induction on $k<\omega$ that $M\cap\aleph_k = N\cap\aleph_k$. This is true
+ for $k\leq n$ because $\omega_n+1\subseteq M\cap N$, so assume $M\cap\aleph_k = N\cap\aleph_k$ for some
+ $k\geq n$, and let
+ \begin{equation}
+ \delta = \sup(M\cap\aleph_{k+1}) = \sup(N\cap\aleph_{k+1}).
+ \end{equation}
+Since $M$ and $N$ are both $\aleph_n$-internally approachable, we know that
+\begin{equation}
+\cf(\delta)=\aleph_n
+\end{equation}
+and there is a closed unbounded $C\subseteq\aleph_n$ such that
+\begin{equation}
+\alpha\in C\Longrightarrow \sup(M_\alpha\cap\aleph_{k+1}) = \sup(N_\alpha\cap\aleph_{k+1}).
+\end{equation}
+If we define
+\begin{equation}
+D:=\{\sup(M_\alpha\cap\aleph_{k+1}):\alpha\in C\}=\{\sup(N_\alpha\cap\aleph_{k+1}):\alpha\in C\}
+\end{equation}
+then $D$ is a subset of $M\cap N$ that is closed and unbounded in $\delta$.
+
+It suffices to prove that $M\cap\aleph_{k+1}$ is subset of $N\cap\aleph_{k+1}$.  Given $\alpha\in M\cap\aleph_{k+1}$ we
+can fix an ordinal $\gamma\in D$ such that $\alpha\leq\gamma$.  This ordinal $\gamma$ is in both $M$ and $N$ and of cardinality
+at most $\aleph_k$, so that there is a function $f$ in $M\cap N$ mapping $\aleph_k$ onto $\gamma$.  The ordinal $\beta=f^{-1}(\{\alpha\})$
+is an element of $M\cap \aleph_k$, hence an element of $N\cap\aleph_k$ by our induction hypothesis.  But now
+\begin{equation}
+\alpha = f(\beta) \in N
+\end{equation}
+and we are done.
+\end{proof}
+
+The above proof admits many generalizations, and we shall take a look at some of these later on.  The important thing to remember
+is that models are tightly connected with their characteristic functions, and in some sense this is why pcf theory has things to
+say about cardinal arithmetic: we can interchange information between sets of ordinals and products of functions using elementary
+submodels and their characteristic functions. But for now, we will be content with the following theorem which was promised in
+the introduction of this section.
+
+\begin{theorem}
+$\max\pcf(\{\aleph_n:n<\omega\}) = \cf\left([\aleph_\omega]^{\aleph_0},\subseteq\right)$.
+\end{theorem}
+\begin{proof}
+Let $\lambda = \max\pcf(\{\aleph_n:n<\omega\})$, let $\mu$ denote the cofinality of $[\aleph_\omega]^{\aleph_0}$, and define
+\begin{equation}
+A:=\{\aleph_n:2\leq n<\omega\}.
+\end{equation}
+We note that $\max\pcf(A)=\lambda$ as well.
+
+
+Any countable subset $\aleph_\omega$ is covered by a set of the form
+\begin{equation}
+\label{eqn:65.9}
+M\cap\aleph_\omega
+\end{equation}
+for some $\aleph_1$-internally approachable model $M$.  There are at most $\lambda$ possibilities for the characteristic function
+of $M$ in $A$ by Corollary~\ref{cor:CaptureChar}, and so there at most $\lambda$ sets of the form (\ref{eqn:65.9}) by
+Proposition~\ref{prop:ModEquProp}.   So let us define
+\begin{equation}
+\mathcal{X} = \{M\cap\aleph_{\omega}:\text{ $M$ is an $\aleph_1$-approachable model containing $A$}\}.
+\end{equation}
+We know $|\mathcal{X}|\leq\lambda$, and any countable subset of $\aleph_\omega$ is covered by a set in $\mathcal{X}$.
+
+To finish, note that if $|X|=\aleph_1$ then the cofinality of $[X]^{\aleph_0}$ is $\aleph_1$. So if $\mathcal{P}_X$ is a cofinal
+subset of $[X]^{\aleph_0}$ of cardinality $\aleph_1$, then
+\begin{equation}
+\mathcal{P} = \bigcup\{\mathcal{P}_X: X\in\mathcal{X}\}
+\end{equation}
+is a cofinal subset of $[\aleph_\omega]^{\aleph_0}$ of cardinality at most $\lambda$, and $\mu\leq\lambda$.
+
+
+For the other direction, assume $\mu$ is strictly less than $\lambda$, and let $\mathcal{P}$ be a cofinal subset of
+$[\aleph_\omega]^{\aleph_0}$ of cardinality $\mu$.  Let $\bar{f}^\lambda=\langle f^\lambda_\alpha:\alpha<\lambda\rangle$ be a
+scale in $\prod A$ modulo $J_{<\lambda}[A]$, and for each $\alpha<\lambda$ let $X_\alpha$ be the range of $f^\lambda_\alpha$.
+
+Now $\mathcal{P}$ is cofinal in $[\aleph_\omega]^{\aleph_0}$ so for each $\alpha<\lambda$ there is an $Y\in\mathcal{P}$ with
+$X_\alpha\subseteq Y$.  Since $\lambda$ is a regular cardinal greater than $|\mathcal{P}|$, there must exist a single
+$Y\in\mathcal{P}$ such that
+\begin{equation}
+|\{\alpha<\lambda:\ran(f^\lambda_\alpha)\subseteq Y\}|=\lambda.
+\end{equation}
+Now let us consider the function $g\in\prod A$ defined by
+\begin{equation}
+g(\aleph_n) = \sup(Y\cap\aleph_n)+1.
+\end{equation}
+Since $\bar{f}^\lambda$ is a cofinality sequence for~$\lambda$, we know $g\leq_{J_{<\lambda}}f^\lambda_\alpha$ for all sufficiently large $\alpha<\lambda$.
+But this cannot be the case if $\alpha$ is such that $\ran(f^\lambda_\alpha)\subseteq Y$, and we have a contradiction.
+
+\end{proof}
+
+
+
+
+
+\begin{corollary}
+$\aleph_\omega^{\aleph_0}= 2^{\aleph_0}\cdot \max\pcf(\{\aleph_n:n<\omega\})$.
+\end{corollary}
+
+
+\section{Things we already know(?)}
+
+\subsection{No Holes Theorem}
+
+\begin{theorem}
+Suppose $A$ is a progressive interval of regular cardinals.  Then $\pcf(A)$ is an interval of regular cardinals.
+\end{theorem}
+\begin{proof}[Sketch of proof]
+
+It suffices to prove that if $\lambda$ is a regular cardinal such that $\sup A <\lambda$ and $I$ is a proper ideal on $A$ such that $\prod A/ I$ is $\lambda$-directed, then $\lambda\in\pcf(A)$. (This will require that $A$ is an interval, of course.)
+
+Without loss of generality, $I$ includes all the bounded subsets of $A$ (why is this?) and this implies that $A$ is infinite without a maximum element.    Use the density of exact sequences to build a sequence $\langle f_\alpha:\alpha<\lambda\rangle$ that is $<_I$-increasing with an exact upper bound $h$ in $\prod A$. Moreover, we can require that the sequence has a stationary set of flat points of cofinality $\kappa$ for every $\kappa$ in $A$, so that for every $\kappa\in A$,
+\begin{equation}
+\{a\in A: \cf(h(a))<\kappa\}\in I.
+\end{equation}
+In particular, this must hold for $\kappa = \min(A)$, so by modifying $h$ on a set in $I$ if necessary, we may assume that the cofinality of $f(a)$ is at least $\min(A)$ for all $a\in A$.  Similarly, we may assume that $h(a)\leq a$ for all $a\in A$, and therefore
+\begin{equation}
+(\forall a\in A)[\min A\leq \cf(h(a))\leq\sup A]
+\end{equation}
+But $A$ is an interval of regular cardinals, so this means that
+\begin{equation}
+(\forall a\in A)[\cf(h(a))\in A].
+\end{equation}
+The sequence of $f_\alpha$ shows us that $\prod h/ I$ has true cofinality $\lambda$, and therefore
+\begin{equation}
+\tcf\left(\prod \{\cf(h(a)):a\in A\}/ I\right)=\lambda.
+\end{equation}
+Now let $B = \{\cf(h(a):a\in\}$ (that is, as a set without repetitions), and let $J$ be the ideal defined on $B$ by
+\begin{equation}
+X\in J\Longrightarrow\{a\in A: \cf(h(a))\in X\}\in I.
+\end{equation}
+Standard arguments using $|A|<\min(A)$ show that
+\begin{equation}
+\tcf\left(\prod B/ J\right) = \lambda,
+\end{equation}
+and hence $\lambda\in \pcf B\subseteq\pcf(A)$.
+\end{proof}
+
+
+\begin{corollary}
+$\cf\left([\aleph_\omega]^{\aleph_0},\subseteq\right)<\aleph_{(2^{\aleph_0})^+}$
+\end{corollary}
+\begin{proof}
+We know that $\pcf(\{\aleph_n:n<\omega\})$ is an interval of regular cardinals with some maximum element $\lambda$. Since $|\pcf(A)|\leq 2^{|A|}$ for any progressive set of regular cardinals, it follows that the interval $[\aleph_{\omega+1},\lambda]$ can contain at most $2^{\aleph_0}$ regular cardinals, and the result follows.
+\end{proof}
+
+\subsection{Scales at cardinals of uncountable cofinality}
+
+\begin{theorem}
+Suppose $\mu$ is singular of uncountable cofinality.  Then there exists a closed unbounded $C\subseteq\mu$ of order-type $\cf(\mu)$ such that
+\begin{equation}
+\tcf\left(\prod \{\theta^+:\theta\in C\}/ J^{\bd}_\mu\right)=\mu^+.
+\end{equation}
+\end{theorem}
+
+\begin{corollary}
+If $\mu$ is singular of uncountable cofinality, then there is a closed unbounded $D\subseteq\mu$ of order-type $\cf(\mu)$ such that
+\begin{equation}
+\max\pcf\left(\{\theta^+:\theta\in C\}\right) = \mu^+.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Let $C$ be a closed unbounded subset of $\mu$ of order-type $\cf(\mu)$ as in the previous theorem, and define
+\begin{equation}
+A:=\{\theta^+:\theta\in C\}
+\end{equation}
+It suffices to show that the generator $B_{\mu^+}$ for $\mu$ must contain a tail of $A$. To see this, define
+\begin{equation}
+B = A\setminus B_{\mu^+},
+\end{equation}
+so
+\begin{equation}
+\mu^+\notin\pcf(B).
+\end{equation}
+This shows us that $B$ cannot be unbounded in $\mu$, as otherwise the restrictions of the scale on for $A$ to $B$ would yield a contradiction.
+\end{proof}
+
+\section{Transitive Generators and Localization}
+
+{\em Notes were typed some time ago, so need to be smoothed out.  They may repeat some things we did last week.}
+
+\subsection{What are transitive generators?}
+\begin{definition}
+Suppose $A\subseteq\Reg$ is progressive, and $\Lambda$ is a subset of $\pcf(A)$.  Let $\bar{B}$ be a sequence $\langle
+B_\lambda:\lambda\in\Lambda\rangle$ of generators for $\Lambda$ in $A$.  We say $\bar{B}$ is {\em transitive} if
+\begin{equation}
+\lambda\in\Lambda\text{ and }\theta\in B_\lambda\cap\Lambda\Longrightarrow B_\theta\subseteq B_\lambda.
+\end{equation}
+\end{definition}
+
+
+Suppose we are given a set $\Lambda$ with $A\subseteq\Lambda\subseteq\pcf(A)$ together with a corresponding sequence $\langle
+B_\lambda:\lambda\in\Lambda\rangle$ of generators for each $\lambda\in\Lambda$ in $A$. How would one go converting this sequence
+of generators into a transitive one?  The first thing we try is brute force.
+
+
+\subsection{A naive attempt}
+
+
+Let us assume that $\langle B_\lambda:\lambda\in\Lambda\rangle$ is a sequence of generators for some subset $\Lambda$ of $\pcf(A)$.  We now try the obvious thing to convert this sequence into a transitive one.
+
+By induction on $n<\omega$, we define sets $B^n_\lambda$ for $\lambda\in\Lambda$ according to the following recipe:
+\begin{itemize}
+\item $B^0_\lambda = B_\lambda$
+\item $B^{n+1}_\lambda = B^n_\lambda\cup\bigcup\{B^n_\theta:\theta\in B^n_\lambda\}$
+\end{itemize}
+Finally, let
+\begin{equation}
+B^\dagger_\lambda = \bigcup_{n<\omega}B^n_\lambda.
+\end{equation}
+We call the collection $\langle B^\dagger_\lambda:\lambda\in\Lambda\rangle$ the {\em smoothing} of $\langle
+B_\lambda:\lambda\in\Lambda\rangle$.
+
+Notice that the smoothing of $\langle B_\lambda:\lambda\in\Lambda\rangle$ is transitive:  if $\theta\in B^\dagger_\lambda$ then
+$\theta\in B^n_\lambda$ for some $n$, and then our construction guarantees
+\begin{equation}
+n\leq k<\omega\Longrightarrow B^k_\theta\subseteq B^{k+1}_\lambda,
+\end{equation}
+so $B^\dagger_\theta\subseteq B^\dagger_\lambda$.
+
+What could go wrong?  We have no way of knowing that $B^\dagger_\lambda$ is still a generator for~$\lambda$, as the smoothing
+process may have enlarged it too much.  We need some way of guaranteeing that $\max\pcf(B^\dagger_\lambda)$ is still $\lambda$.
+This is where the work in the previous section will pay off, as we will be able to show that the smoothing process will work with
+the sort of generators we built there.  To refresh our memory,  we review the notational complexity concerning generators that
+has accumulated over this section and the preceding one.
+
+First, in the model $N_0$ we have a fixed set of generators $\langle B_\lambda:\lambda\in\pcf(A)\rangle$ as well as corresponding
+cofinality sequences $\bar{f}^\lambda$ for each $\lambda\in\pcf(A)$, which we assume to be minimally club continuous on
+cofinality $\kappa$.
+
+For each $\lambda$ in $N\cap\pcf(A)$, the cofinality sequence $\bar{f}^\lambda$ produces a generator $B^*_\lambda$ for $\lambda$
+defined as
+\begin{equation}
+B^*_\lambda = \left\{a\in A: f^\lambda_{\sup(N\cap\lambda)}(a)=\sup(N\cap a)\right\}.
+\end{equation}
+There is also a closed unbounded set $E\subseteq\kappa$ with the property that for each $\lambda\in N\cap\pcf(A)$, for all
+sufficiently large $i<j$ in $E$, the set
+\begin{equation}
+\label{eqn:7.5}
+B^{i, j}_\lambda = \left\{a\in A: \sup(N_i\cap a)<f^\lambda_{\sup(N_j\cap\lambda)}(a)\right\}
+\end{equation}
+is a generator for $\lambda$, and
+\begin{equation}
+B^{i, j}_\lambda\subseteq B^*_\lambda.
+\end{equation}
+
+Our plan is to show that the smoothing of $\langle B^*_\lambda:\lambda\in N\cap\pcf(A)\rangle$ produces a transitive sequence of
+generators, and then show that these reflect nicely down into $N$.
+
+
+\subsection{Existence of Transitive Generators}
+
+\begin{theorem}
+\label{thm:TransGenExist} Suppose that $A$ is a set a regular cardinals with $|A|^+<\min(A)$, and let $N$ be a
+$\kappa$-internally approachable model with $A\in N$ for some regular $\kappa$ satisfying $|A|<\kappa<\min(A)$. Then there is a
+transitive sequence $\langle B^\dagger_\lambda:\lambda\in N\cap\pcf(A)\rangle$ of generators for
+    $N\cap\pcf(A)$.  Furthermore, this sequence reflects into $N$, in the sense that for each $\zeta<\kappa$, there is a transitive
+     sequence $\langle B^\zeta_\lambda:\lambda\in N_\zeta\cap\pcf(A)\rangle$ in $N$ such that $B^\zeta_\lambda$, and
+      $B^\zeta_\lambda\subseteq B^\dagger_\lambda$.
+\end{theorem}
+
+The use of the ``dagger'' is because it looks like a ``t'', so it helps to remember that these are transitive.
+
+
+\begin{proof}
+
+
+For each $\lambda\in\pcf(A)$ and $\alpha<\lambda$, we will define functions $f^{\lambda,n}_\alpha$ for $n<\omega$ by induction.
+We start by setting $f^{\lambda,0}_\alpha = f^\lambda_\alpha$.  For the successor case, we define $f^{\lambda,
+n+1}_\alpha\in\prod A$ by
+
+\begin{equation}
+\label{eqn:7.4}
+f^{\lambda, n+1}_\alpha(\theta)=\sup\left[\{f^{\lambda,n}_\alpha(\theta)\}\cup\{f^{\mu,n}_{f^{\lambda,n}_\alpha(\mu)}(\theta):\mu\in
+A\cap [\theta,\lambda)\}\right].
+\end{equation}
+
+This formula deserves some explanation. What we are trying to do is to mirror the smoothing process for $\langle
+B^*_\lambda:\lambda\in N\cap\pcf(A)\rangle$ with the cofinality sequences we use to build those generators.  Think now for a
+moment about what occurs if $\lambda\in N\cap\pcf(A)$, $\mu\in B^*_\lambda$, and $\theta\in B^*_\mu$.  By definition, this means
+\begin{equation}
+f^\lambda_{\sup(N\cap\lambda)}(\mu) = \sup(N\cap\mu),
+\end{equation}
+and
+\begin{equation}
+f^\mu_{\sup(N\cap\mu)}(\theta) = \sup(N\cap\theta).
+\end{equation}
+But then
+\begin{equation}
+\sup(N\cap\theta)=f^\mu_{\sup(N\cap\mu)}(\theta) = f^\mu_{f^\lambda_{\sup(N\cap\lambda)}(\mu)}(\theta)\leq f^{\lambda, 1}_{\sup(N\cap\lambda)}(\theta).
+\end{equation}
+On the other hand, since $\bar{f}^\lambda$ and $\bar{f}^\mu$ are both minimally club continuous at cofinality $\kappa$, it will follow
+(and we shall soon show) that
+\begin{equation}
+f^{\lambda, 1}_{\sup(N\cap\lambda)}\leq \chi_N.
+\end{equation}
+Thus,
+\begin{equation}
+ B^*_\lambda\cup\bigcup\{B^*_\mu:\mu\in B^*_\lambda\}\subseteq \left\{a\in A: \sup(N\cap a) = f^{\lambda, 1}_{\sup(N\cap\lambda)}(a)\right\},
+\end{equation}
+and we will be able to use arguments from the previous section to prove the set on the right is still a generator for $\lambda$.
+
+Let's do this formally. First, we denote the smoothing process as before:
+\begin{itemize}
+\item $B^0_\lambda = B^*_\lambda$, and
+\item $B^{n+1}_\lambda = B^n_\lambda\cup\bigcup\{B^n_\mu:\mu\in B^n_\lambda\}$, and
+\item $B^\dagger_\lambda = \bigcup_{n<\omega} B^n_\lambda$.
+\end{itemize}
+
+
+
+We show by induction on $n<\omega$ that the following statements hold for all $\lambda\in N\cap\pcf(A)$:
+\begin{equation}
+\label{eqn:7.1}
+B^{n}_\lambda\subseteq\left\{a\in A: \sup(N\cap a) = f^{\lambda, n}_{\sup(N\cap\lambda)}(a)\right\}.
+\end{equation}
+and
+\begin{equation}
+\label{eqn:7.2}
+\gamma\in\cl(N)\cap\lambda\Longrightarrow \ran(f^{\lambda, n}_\gamma)\subseteq\cl(N),
+\end{equation}
+where ``$\cl(N)$'' denotes the closure of $N\cap\ord$ in the order-topology.
+
+The first statement is true for $n = 0$ by our choice of $B^*_\lambda$.  For the second statement, we have what we need automatically
+if $\gamma$ is in $N$, as then $\ran(f^\lambda_\gamma)$ will be a subset of $N$.  If $\gamma = \sup(N\cap\gamma)$ but $\gamma\notin N$,
+then we know $\cf(\gamma) = \kappa$ and by the minimal club continuity requirement
+\begin{equation}
+f^\lambda_\gamma = \sup\{f^\lambda_\alpha:\alpha\in C\}
+\end{equation}
+for some closed unbounded $C\subseteq N\cap\gamma$.  Since the range of $f^\lambda_\alpha$ is a subset of $N$ for $\alpha\in C$,
+we have what we need.  Now assume (\ref{eqn:7.1}) and (\ref{eqn:7.2}) hold for $n$ and all $\lambda\in N\cap\pcf(A)$.
+
+Since $f^{\lambda, n}_\alpha\leq f^{\lambda, n+1}_\alpha$ for all $\alpha<\lambda$,
+we will need to show
+\begin{equation}
+\theta\in B^{n+1}_\lambda\setminus B^n_\lambda \Longrightarrow \sup(N\cap\theta)\leq f^{\lambda, n+1}_{\sup(N\cap\lambda)}(\theta).
+\end{equation}
+For such a $\theta$, there is a $\mu\in B^n_\lambda$ with $\theta\in B^n_\mu$ and by our induction hypothesis this means
+\begin{equation}
+\sup(N\cap\theta)\leq f^{\mu, n}_{\sup(N\cap\mu)}(\theta).
+\end{equation}
+Thus, we have part of what we need:
+\begin{equation}
+\label{eqn:7.3}
+\sup(N\cap\theta)\leq f^{\mu, n}_{\sup(N\cap\mu)}(\theta) = f^{\mu, n}_{f^{\lambda, n}_{\sup(N\cap\lambda)}(\mu)}(\theta)\leq f^{\lambda, n+1}_{\sup(N\cap\lambda)}(\theta).
+\end{equation}
+
+Now look at (\ref{eqn:7.2}).  Given $\gamma\in\cl(N)\cap\lambda$, the value of $f^{\lambda,n+1}_\gamma(\theta)$ is computed as the supremum
+of a certain set, so we need to check that each element of this set is in the closure of $N$.  This is true for $f^{\lambda, n}_\gamma(\theta)$
+by our induction hypothesis.  If $\mu\in A\cap [\theta,\lambda)$, then $f^{\lambda, n}_\gamma(\mu)$ will be in the closure of $N$
+by our induction hypothesis for $\lambda$, and so
+\begin{equation}
+f^{\mu, n}_{f^{\lambda, n}_{\sup(N\cap\lambda)}}(\theta)\in\cl(N)
+\end{equation}
+by our induction hypothesis for $\mu$.  Thus, (\ref{eqn:7.2}) will continue to hold.
+
+From this, we conclude
+\begin{equation}
+f^{\lambda, n+1}_{\sup(N\cap\lambda)}(\theta)\leq\max(\cl(N)\cap\theta)=\sup(N\cap\theta),
+\end{equation}
+and combining this with (\ref{eqn:7.3}) gives us~(\ref{eqn:7.1}).
+
+
+We emphasize that the (\ref{eqn:7.1}) and (\ref{eqn:7.2}) are facts that are external to the model~$N$. Outside of the model, we
+see that these statements are true,  and that they hold only for those $\lambda$ that are in $N\cap\pcf(A)$.
+On the other hand, the actual construction of the functions is done for all $\lambda\in\pcf(A)$ and $\alpha<\lambda$ using the recipe~(\ref{eqn:7.4}),
+and this is something that the model $N$ sees.
+
+
+Thus, if for each $\lambda\in\pcf(A)$ and $\alpha<\lambda$ we define
+\begin{equation}
+f^{\lambda,\omega}_\alpha = \sup\{f^{\lambda, n}_\alpha:n<\omega\},
+\end{equation}
+the resulting collection $\langle f^{\lambda,\omega}_\alpha:\lambda\in \pcf(A)\text{ and }\alpha<\lambda\rangle$ is in $N$.
+We will use this to prove that $\max\pcf(B^\dagger_\lambda)=\lambda$ for each $\lambda\in N\cap\pcf(A)$.
+
+
+This is an argument we used before when we showed that $B^*_\lambda$ is a generator.  It goes through under fairly general circumstances
+but we won't belabor that now.
+
+We need only consider the case where $\lambda<\max\pcf(A)$. In this situation, we can find a $g\in\prod A$ {\em in } $N$ that bounds
+$\langle f^{\lambda,\omega}_\alpha:\alpha<\lambda\rangle$ modulo $J_{\leq\lambda}[A]$ because the corresponding reduced product is
+$\lambda^+$-directed.
+Our construction guarantees that for $\lambda\in N\cap\pcf(A)$ we will have
+\begin{equation}
+B^\dagger_\lambda\subseteq\{ a\in A: f^{\lambda,\omega}_{\sup(N\cap\lambda)}(a) = \sup(N\cap a)\}.
+\end{equation}
+Since the function $g$ is in $N$, we have
+\begin{equation}
+\{a\in A: f^{\lambda,\omega}_{\sup(N\cap\lambda)}(a) = \sup(N\cap a)\}\subseteq \{a\in A: g(a)<
+ f^{\lambda,\omega}_{\sup(N\cap\lambda)}(a)\},
+\end{equation}
+and this last set is in $J_{\leq\lambda}[A]$ by our choice of $g$.
+Thus, $\max\pcf(B^\dagger_\lambda)\leq\lambda$, and $\langle B^\dagger:\lambda\in\pcf(A)\rangle$ is a transitive sequence
+of generators for $N\cap\pcf(A)$.
+
+We still have unfulfilled promises concerning the ability to reflect this sequence of generators into $N$, and for this we need to use
+the closed unbounded set $E$ and generators $B^{i,j}_\lambda$  from~(\ref{eqn:7.5}).  Given $\zeta<\kappa$, since $|N_\zeta\cap\pcf(A)|<\kappa$
+we can find $i<j$ in $E$ so large that for all $\lambda\in N_\zeta\cap\pcf(A)\rangle$,
+\begin{equation}
+B^{i,j}_\lambda = \left\{a\in A: \sup(N_i\cap a)<f^{\lambda}_{\sup(N_j\cap\lambda)}(a)\right\}
+\end{equation}
+is  a generator for $\lambda$ that is a subset of $B^*_\lambda$.  The entire collection $\langle B^{i,j}_\lambda:\lambda\in N_\zeta\cap\pcf(A)\rangle$
+is in $N_{j+1}$.  If we run the smoothing process on this collection, the corresponding sequence $\langle B^\zeta_\lambda:\lambda\in N_\zeta\cap\pcf(A)\rangle$
+is also in $N_{j+1}$, and since $B^{i,j}_\lambda\subseteq B^*_\lambda$, we have
+\begin{equation}
+B^\zeta_{\lambda}\subseteq B^{\dagger}_\lambda.
+\end{equation}
+Thus, $\langle B^\zeta_\lambda:\lambda\in N_\zeta\cap\pcf(A)\rangle$ is a transitive sequence of generators for $N_\zeta\cap\pcf(A)$ that
+is in the model $N$.
+
+\end{proof}
+
+\subsection{The Localization Theorem}
+
+We know that a full collection $\langle B_\lambda:\lambda\in\pcf(A)\rangle$ of generators for $\pcf(A)$ possesses a nice
+compactness property:
+if $B\subseteq A$ then there is a finite collection $\lambda_0>\dots>\lambda_n$ of cardinals in $\pcf(B)$ such that
+\begin{equation}
+B\subseteq B_{\lambda_0}\cup\dots\cup B_{\lambda_n}.
+\end{equation}
+
+
+The situation is a little more delicate if we don't have a full suite of generators at our disposal, and this state of affairs may arise
+in situations where we want to make arguments using transitive generators because Theorem~\ref{thm:TransGenExist} only provides transitive
+generators for $N\cap\pcf(A)$ which is not guaranteed to include everything.   The following lemma tell us that the transitive generators
+we build for $N\cap\pcf(A)$ will suffice to cover a set $B\subseteq A$, as long as we know $B$ is in $N$.
+
+
+The following argument should look familiar by this point:
+\begin{lemma}
+\label{lem:ComForTrans}
+Suppose $B$ is a subset of $A$ and $B\in N$.  Then there is a finite collection $\lambda_0>\dots>\lambda_n$ of cardinals in $N\cap\pcf(B)$
+such that
+\begin{equation}
+B\subseteq B^\dagger_{\lambda_0}\cup\dots\cup B^\dagger_{\lambda_n}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For each $\lambda\in N\cap\pcf(A)$, let $B'_\lambda$ be an internal reflection of $B^\dagger_\lambda$ in $N$, that is,
+\begin{itemize}
+\item $B'_\lambda$ is a generator for $\lambda$,
+\item $B'\in N$,  and
+\item $B'_\lambda\subseteq B^\dagger_\lambda$.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make a suitable definition of internal reflection?%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Since $B\in N$, we know $\lambda_0 = \max\pcf(B)$ is in $N$ too, as well as
+\begin{equation}
+B_1 = B\setminus B'_{\lambda_0}.
+\end{equation}
+Furthermore, if $B_1$ is non-empty, then $\lambda_1=\max\pcf(B_1)$ is in $N$, and $\lambda_1<\lambda_0$.  Now we iterate this process
+just as in previous arguments o produce $\lambda_0>\dots>\lambda_n$ in $\pcf(B)\cap N$ such that
+\begin{equation}
+B\subseteq B'_{\lambda_0}\cup\dots\cup B'_{\lambda_n}.
+\end{equation}
+Since the primed generators are reflections of the transitive generators we started with, we have
+\begin{equation}
+B\subseteq B^\dagger_{\lambda_0}\cup\dots\cup B^\dagger_{\lambda_n}
+\end{equation}
+as required.
+\end{proof}
+
+We will use this to prove one of the important structural results about $\pcf(A)$. We borrow the language below from topology.
+
+
+\begin{definition}
+A set $B\subseteq \pcf(A)$ is {\em left separated} if
+\begin{equation}
+\theta\in B\Longrightarrow \max\pcf(B\cap\theta)<\theta.
+\end{equation}
+\end{definition}
+
+Left separated subsets of $\pcf(A)$ should be thought of as ``thin'' or ``rapidly growing''. The next result shows us that these
+cannot be too large.
+
+\begin{theorem}
+Let $A$ be a progressive set of regular cardinals.  If $B\subseteq\pcf(A)$ is left separated, then $|B|\leq |A|$.
+\end{theorem}
+\begin{proof}
+By way of contradiction, assume that $\pcf(A)$ has a left separated subset $B$ of cardinality $|A|^+$.  We may assume without loss
+of generality that $|A|^{++}<\min(A)$, and let $A'$ denote $A\cup B$ and $\kappa$ denote $|A|^{++}$.
+
+Let $N$ be a $\kappa$-internally approachable model containing $A'$, and let $\langle B^\dagger_\lambda:\lambda\in N\cap\pcf(A')\rangle$
+be the transitive sequence of generators for $N\cap\pcf(A')$ obtained from Theorem~\ref{thm:TransGenExist}.
+
+
+
+Since $B\subseteq\pcf(A)$, for each $\theta\in B$ we know $\theta\in\pcf(B_\theta^\dagger\cap A)$ -- in fact, $\theta$ is
+$\max\pcf(B^\dagger_\theta\cap A)$.
+
+On the other hand, there is a $\lambda\in B$ such that
+\begin{equation}
+A\cap\bigcup_{\theta\in B}B_\theta^\dagger = A\cap\bigcup_{\theta\in B\cap\lambda}B_\theta.
+\end{equation}
+
+
+For each $a\in A$, we ask if $a\in B^\dagger_\theta$ for some $\theta\in B$. The answer to this may be either ``yes'' or ``no'', but
+since $|B|=|A|^+$, there is a $\lambda\in B$ so that if the answer is ``yes'' for $a$, then there is such a $\theta<\lambda$.
+
+(Think of this topologically -- $B_\theta$ should be visualized as an open neighborhood of $\theta$, with $A$ playing the role of a
+dense subset of $A'$.   We are looking at those members of $A$ that are covered by the $B_\theta$, and then it is clear that such a $\lambda$
+must exist.  Since $|A|<|B|$, there is a $\lambda\in B$ such that part of $A$ that is covered by some $B^\dagger_\theta$ with $\theta\in B$ must be covered
+by $B_\theta^\dagger$ for some $\theta<\lambda$.)
+
+\bigskip
+
+(Let $A^*$ be the part of $A$ that is covered by $B_\theta^\dagger$ for some $\theta\in B$.   We now know two facts:
+
+
+\begin{itemize}
+\item  $B\subseteq\pcf(A^*)$, and
+\item there is a $\lambda\in B$ such that $A^*\subseteq \bigcup \{B^\dagger_\theta:\theta\in B\cap\lambda\}$
+\end{itemize}
+We will get a contradiction by showing that $\max\pcf(A^*)<\lambda$.
+)
+
+Now let $C = B\cap \lambda$. Since $C$ is in $N$, we can apply Lemma~\ref{lem:ComForTrans} and find $\lambda_0>\dots>\lambda_n$
+in $\pcf(C)\cap N$ such that
+\begin{equation}
+C\subseteq B^\dagger_{\lambda_0}\cup\dots\cup B^\dagger_{\lambda_n}.
+\end{equation}
+
+Since $B$ is left separated, we know $\max\pcf(C)<\lambda$ and hence
+\begin{equation}
+\label{eqn:7.7}
+B^\dagger_{\lambda_0}\cup\dots\cup B^\dagger_{\lambda_n}\in J_{<\lambda}[A'].
+\end{equation}
+Now we claim
+\label{eqn:7.6}
+\begin{equation}
+A^*\subseteq B^\dagger_{\lambda_0}\cup\dots\cup B^\dagger_{\lambda_n},
+\end{equation}
+Why does this hold?  If $a\in A^*$\, then
+$a$ is in $B^\dagger_\theta$ for some $\theta\in C$.  But $\theta$ must be in $B^{\dagger}_{\lambda_i}$ for some $i\leq n$ so by
+transitivity
+\begin{equation}
+a\in B^\dagger_\theta\subseteq B^\dagger_{\lambda_i}
+\end{equation}
+and we have (\ref{eqn:7.6}).
+
+But now we have a contradiction, as on the one hand (\ref{eqn:7.7}) tells us
+\begin{equation}
+A^*\in J_{<\lambda}[A\cup B],
+\end{equation}
+and on the other hand
+\begin{equation}
+\lambda\in\pcf(A^*).
+\end{equation}
+
+
+
+\end{proof}
+
+The next theorem is really just another translation of the bound we have on left-separated subspaces in $\pcf(A)$.  It says that $\pcf(A)$
+satisfies a modified topological tightness condition.
+
+\begin{theorem}[Localization]
+Suppose $A$ is progressive set of regular cardinals, and $B\subseteq\pcf(A)$ is progressive.  If $\lambda\in\pcf(B)$ then there exists
+a set $C\subseteq B$ such that
+\begin{equation}
+|C|\leq |B|,
+\end{equation}
+and
+\begin{equation}
+\lambda\in\pcf(C).
+\end{equation}
+\end{theorem}
+\begin{proof}
+Suppose $B\subseteq \pcf(A)$ with $|B|<\min(B)$. We prove the result by induction on $\lambda\in\pcf(B)$, so assume we have the result
+for all $\theta\in\pcf(B)\cap\lambda$.   It suffices to produce a subset $C$ of $\pcf(B)\cap\lambda$ with $\lambda\in C$ and $|C|\leq|A|$,
+as for each $\theta\in C$, our induction assumption will had us a set $C_\theta\subseteq B$ such that $|C_\theta|\leq |A|$ and $\theta\in\pcf(C_\theta)$.
+The union of the sets $C_\theta$ is a subset of $B$ of cardinality at most $|A|$ that picks up $\lambda$ as a possible cofinality.
+
+We can also make some simplifying assumptions by passing to suitable subsets of $B$. For example, we may assume that
+ $\lambda = \max\pcf(B)$, and $\pcf(B)\cap\lambda$ has no last element. This can be arranged by first replacing
+$B$ by $B_\lambda[B]$ (to make sure that $\lambda$ is the maximum possible cofinality), and then asking if $\pcf(B)\cap\lambda$ has
+ a maximum value. If so, we remove a generator for that value, and ask the question again.  We cannot answer ``yes''
+  infinitely many times, as this would produce an infinite decreasing sequence of cardinals. But the union of the finitely many sets
+   we remove by this process is in $J_{<\lambda}[B]$, so $\lambda$ will still be the maximum possible cofinality of the remainder.
+
+
+We will build our set $C$ through a construction that will attempt to pass through $|A|^+$ levels, adding some $\theta_\alpha$ into $C$
+at stage $\alpha$.  We try to make sure that $\theta_\alpha$ is in $\pcf(B)$, and that
+\begin{equation}
+\max\pcf(\{\theta_\beta:\beta<\alpha\})<\theta_\alpha<\lambda.
+\end{equation}
+This construction cannot continue for all $|A|^+$ stages, as it would generate a left-separated subset of $\pcf(A)$ of cardinality~$|A|^+$.
+So this means we reach a stage $\alpha$ where there is no suitable $\theta_\alpha$.  We have arranged that $\pcf(B)\cap\lambda$ does not
+have a maximum element, so the only way that we fail to find an appropriate $\theta_\alpha$ is if
+\begin{equation}
+\lambda\in\pcf(\{\theta_\beta:\beta<\alpha\}).
+\end{equation}
+But now we define
+\begin{equation}
+C:=\{\theta_\beta:\beta<\alpha\}
+\end{equation}
+and we are done.
+\end{proof}
+
+
+
+
+\section{No large intervals}
+
+
+\begin{theorem}
+If $A$ is a progressive set of regular cardinals, then $\pcf(A)$ cannot contain an interval of cardinality $|A|^{+4}$.
+\end{theorem}
+\begin{proof}
+
+Suppose by way of contradiction that $\pcf(A)$ contains an interval $X$ of regular cardinals of cardinality $|A|^{+4}$.
+We may assume that $X$ consists entirely of successor ordinals, and that $X$ is of order-type $|A|^+$.
+
+If we let $\kappa$ denote $|A|$, then we can assume
+\begin{equation}
+X = \{\eta_\alpha^+:\alpha<\kappa^{+4}\}
+\end{equation}
+where $\{\eta_\alpha:\alpha<\kappa^{+4}\}$ is an interval of cardinals that we want to think of as a copy of $\kappa^{+4}$.
+
+We will define a continuous strictly increasing function
+\begin{equation}
+  \Phi:\kappa^{+3}\rightarrow \kappa^{+4}
+\end{equation}
+by induction on $\alpha<\kappa^{+3}$.   We will also have an associated function
+\begin{equation}
+\Phi^+:\kappa^{+3}\rightarrow X
+\end{equation}
+defined by
+\begin{equation}
+\Phi^+(\alpha) = \eta^+_{\Phi(\alpha)}.
+\end{equation}
+
+
+In order to define the function $\Phi$, we let $S$ be the stationary subset $S^{\kappa^{+3}}_{\kappa^+}$ of $\kappa^{+3}$, and fix
+a club-guessing sequence $\langle C_\delta:\delta\in S\rangle$ such that $\otp(C_\delta)=\kappa^+$ for each $\delta\in S$.  We  assume that
+$C_\delta$ is a set of limit ordinals, as this causes no harm and simplifies notation a little later on.
+
+We start by setting $\Phi(0)=0$, and for limit $\alpha$ we know that $\Phi(\alpha)$ must be the supremum of earlier values.
+
+Now how do we define $\Phi(\alpha+1)$ if we know $\Phi(\beta)$ for all $\beta\leq\alpha$?
+
+For each $\delta\in S$ we will ask a question, which we refer to as ``The $C_\delta$ question for $\alpha$'': we ask
+\begin{center}
+\fbox{Is $\max\pcf\left(\Phi^+[C_\delta\cap\alpha]\right)\in X$?}
+\end{center}
+
+This is a question that makes sense, as $C_\delta\cap \alpha$ is a subset of $\alpha$, and $\Phi^+[C_\delta\cap\alpha]$ is a subset of $X$.
+The answer may be either yes or no.  If the answer is no, then this is because the corresponding $\max\pcf$ is larger than $\sup(X)$.
+
+There are only $\kappa^{+3}$ ordinals $\delta$ to consider, so we can choose $\Phi(\alpha+1)<\kappa^{+4}$ so large that for any $\delta\in S$,
+\begin{equation}
+\max\pcf\left(\Phi^+[C_\delta\cap\alpha]\right)<\sup(B)\Longrightarrow \max\pcf\left(\Phi^+[C_\delta\cap\alpha]\right)<\Phi^+(\alpha+1).
+\end{equation}
+Thus, if the $C_\delta$ question for $\alpha$ has a ``yes'' answer, then $\Phi(\alpha+1)$ is large enough so that $\Phi^+(\alpha+1)$ is greater
+than $\max\pcf(\Phi^+[C_\delta\cap\alpha])$.
+
+This construction defines the function $\Phi:\kappa^{+3}\rightarrow\kappa^{+4}$, and we will get our contradiction by looking at the behavior
+of sets of the form $\Phi^+[C_\delta]$ for $\delta\in S$.  Our construction is designed so that the following claim must hold:
+
+\begin{claim}
+For each $\delta\in S$,
+\begin{equation}
+\max\pcf\left(\Phi^+[C_\delta]\right)>\sup(X).
+\end{equation}
+\end{claim}
+\begin{proof}
+If this fails for $\delta$, then for each $\alpha$ the $C_\delta$ question for $\alpha$ was answered with ``yes''.  Let us now suppose that
+$\alpha$ is in $\nacc(C_\delta)$, and let $\beta\sup(C_\delta\cap\alpha)$. Note that since $C_\delta$ consists of limit ordinals, we know $\beta+2<\alpha$.
+
+The $C_\delta$ question for $\beta+1$ had the answer ``yes'', and
+so our construction guarantees
+\begin{equation}
+\max\pcf\left(\Phi^+[C_\delta\cap\beta+1]\right)<\Phi(\beta+2)<\Phi^+(\alpha).
+\end{equation}
+But $C_\delta\cap\beta+1 = C_\delta\cap\alpha$, and so for $\alpha\in \nacc(C_\delta)$ we have
+\begin{equation}
+\max\pcf\left(\Phi^+[C_\delta\cap\alpha]\right)<\Phi^+(\alpha).
+\end{equation}
+Now we define
+\begin{equation}
+B:=\Phi^+[\nacc(C_\delta)]
+\end{equation}
+and note
+\begin{equation}
+\theta\in B\Longrightarrow \max\pcf(B\cap\theta)<\theta,
+\end{equation}
+which is a contradiction as $|B|=|A|^+$.
+\end{proof}
+
+
+To finish the proof,  let us define
+\begin{equation}
+\mu = \sup\ran(\Phi^+)
+\end{equation}
+Then $\mu$ is a singular cardinal of cofinality $\kappa^{+3}$, and thus there is a closed unbounded $C\subseteq\mu$ of order-type
+$\kappa^{+3}$ such that
+\begin{equation}
+\max\pcf(\{\theta^+:\theta\in C\})=\mu^+<\sup(X).
+\end{equation}
+Since $\{\eta_{\Phi(\alpha)}:\alpha<\kappa^{+3}\}$ enumerates a closed unbounded subset of $\mu$, we can find a closed unbounded
+set $E\subseteq\kappa^{+3}$ such that
+\begin{equation}
+\{\eta_{\Phi(\alpha)}:\alpha\in E\}\subseteq C.
+\end{equation}
+
+
+Now choose $\delta\in S$ such that $C_\delta\subseteq E$.  Then
+\begin{equation}
+\Phi^+[C_\delta]\subseteq\{\theta^+:\theta\in C\}
+\end{equation}
+and therefore we have found a $\delta\in S$ for which
+\begin{equation}
+\max\pcf\left(\Phi^+[C_\delta]\right)\leq\mu^+<\sup(B).
+\end{equation}
+This contradicts the previous claim.
+\end{proof}
+
+
+\end{document}
