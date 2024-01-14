@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
   <docinfo>
-    <macros>\newcommand{\foo}{b^{ar}}</macros>
+
     <latex-image-preamble>\usepackage{tikz}</latex-image-preamble>
   </docinfo>
-  <article xml:id="my-great-article">
- <title>blah</title>
+  <article xml:id="aleph4">
+ <title>Notes on pcf theory</title>
 	
 	<section xml:id="the-basic-pcf-toolkit">
 		<title>The basic pcf toolkit</title>
@@ -15,9 +15,17 @@
 			<title>What is <m>\mathop{\mathrm{pcf}}(A)</m> again?</title>
 
 			<p>
-				We assume that <m>A</m> is a progressive set of regular cardinals, that is <m>|A|&lt;\min(A)</m>.
-				 We have defined <m>\mathop{\mathrm{pcf}}(A)</m> to be those cardinals <m>\lambda</m> that appear as the bounding number <m>\mathfrak{b}(I)</m>
-				  for some proper ideal <m>I</m> on <m>\lambda</m>. Using the density of exact sequences, we obtained an equivalent characterization in terms of
+			Throughout these notes,  <m>A</m> will be a set of regular cardinals 
+			 satisfying <m>|A|<\min(A)</m>. Sets of cardinals satisfying this condition are known as <em>progressive</em>.
+			 
+<!-- 			 Given an ideal <m>I</m> on <m>A</m> , the structure <m>\prod A/ I</m> is partially ordered by the relation <m>\leq_I</m>, with a corresponding
+			 bounding number <m>\mathfrak{b}(I)</m> (defined to be the minimum cardinality of an unbounded subset of <m>\prod A/I</m>).  We define
+			<me>
+				\(A)=\{\lambda:\lambda=\mathfrak{b}(I)\text{ for some ideal }I\text{ on }A\}
+			</me> -->
+		</p>
+		<p>
+			 Using the density of exact sequences, we obtained an equivalent characterization in terms of
 				   true cofinalities. <me>\mathop{\mathrm{pcf}}(A) = \{\mathop{\mathrm{tcf}}(I): I\text{ a proper ideal on $A$ for which $\mathop{\mathrm{tcf}}(I)$ exists}\}.</me>
 				    This can be re-formulated in terms of ultrafilters as well, yielding Shelah’s original definition:
 					 <me>\mathop{\mathrm{pcf}}(A) = \left\{\mathop{\mathrm{cf}}\left(\prod A/ U\right): \text{$U$ an ultrafilter on $A$}\right\}.</me> 
@@ -82,15 +90,20 @@
 		<subsection xml:id="compactness-for-generators">
 			<title>Compactness for Generators</title>
 
-<!-- div attr= class="lemma"-->
-			<p>
-				<term>Lemma 1</term>.  Suppose <m>X\subseteq A</m>. Then <m>\max\mathop{\mathrm{pcf}}(X)</m> is the least <m>\lambda</m> such that <m>X\in I_{\leq\lambda}</m>.
-			</p><!--</div attr= class="lemma">-->
-
-<!-- div attr= class="proof"-->
-			<p>
-				<em>Proof.</em> If <m>X\in I_{\leq\lambda}</m> then <m>\max\mathop{\mathrm{pcf}}(X)\leq\lambda</m>, as there is a finite <m>Y\subseteq\mathop{\mathrm{pcf}}(A)\cap\lambda^+</m> such that <me>X\subseteq\bigcup_{\theta\in Y} B_\theta[A].</me>
-			</p>
+<lemma xml:id="lem-maxpcf">
+	<statement>
+		<p>
+			Suppose <m>X\subseteq A</m>. Then <m>\max\mathop{\mathrm{pcf}}(X)</m> is the least <m>\lambda</m>
+			 such that <m>X\in I_{\leq\lambda}</m>.	
+		</p>
+	</statement>
+</lemma>
+<proof>
+	<p>
+		If <m>X\in I_{\leq\lambda}</m> then <m>\max\mathop{\mathrm{pcf}}(X)\leq\lambda</m>, as there is a finite <m>Y\subseteq\mathop{\mathrm{pcf}}(A)\cap\lambda^+</m>
+ such that <me>X\subseteq\bigcup_{\theta\in Y} B_\theta[A].</me>
+	</p>
+</proof>			
 
 			<p>
 				Now if <m>\lambda</m> is the <em>least</em> element of <m>\mathop{\mathrm{pcf}}(A)</m> with <m>X\in I_{\leq\lambda}</m> then we know a couple of things. First, <m>X</m> is <em>NOT</em> in <m>I_{&lt;\lambda}</m>. Second, <me>X\setminus B_{\lambda}[A]\in I_{&lt;\lambda}</me> because <m>B_{\lambda}[A]</m> generates <m>I_{\leq\lambda}</m> over <m>I_{&lt;\lambda}</m>. Putting these facts together tells us <me>\lambda = \mathop{\mathrm{tcf}}\left(\prod X/ I_{&lt;\lambda}\restriction X\right)</me> and therefore <m>\lambda</m> is in <m>\mathop{\mathrm{pcf}}(X)</m>. ◻
