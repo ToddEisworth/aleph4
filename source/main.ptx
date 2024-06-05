@@ -16,7 +16,8 @@
 
 			<p>
 			Throughout these notes,  <m>A</m> will be a set of regular cardinals 
-			 satisfying <m>|A|<\min(A)</m>. Sets of cardinals satisfying this condition are known as <em>progressive</em>.
+			 satisfying <m>|A|<\min(A)</m>. 
+			 Sets of cardinals satisfying this condition are known as <em>progressive</em>.
 			 
 <!-- 			 Given an ideal <m>I</m> on <m>A</m> , the structure <m>\prod A/ I</m> is partially ordered by the relation <m>\leq_I</m>, with a corresponding
 			 bounding number <m>\mathfrak{b}(I)</m> (defined to be the minimum cardinality of an unbounded subset of <m>\prod A/I</m>).  We define
